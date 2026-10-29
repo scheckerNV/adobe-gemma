@@ -1,0 +1,5254 @@
+{
+  "as_of": "2026-10-29",
+  "scope": "Aggregate measurements only; no customer prompts, images, generated text, credentials or request IDs.",
+  "percentiles": "Linear interpolation at (n-1)*q; text p90 recomputed from original request timings and p95 cross-checked against saved summaries.",
+  "sources": {
+    "summary.json": {
+      "sha256": "03dd5b55402d262bcce04d1231de976fe4a03731ddd6975f4677eebb990ab881"
+    },
+    "gemma4-reports.zip": {
+      "sha256": "db2cf9e7163f6a33a97d55247a0f7dea32493eafbcb4b78b28cc4a3b1d14b567"
+    },
+    "latest-reports.zip": {
+      "sha256": "8a2666f63e75667930e178de3846f526e1b73766ca37dee532d55617cd475735"
+    },
+    "overnight-review-20261029.zip": {
+      "sha256": "0d5140f8c0e97b7e2d419c42a94b7ff4e4280ec37aa6824b3c4c29f3f5abeee8"
+    }
+  },
+  "runs": [
+    {
+      "workload": "gemma4-text",
+      "series": "baseline-20261027T175006Z",
+      "run": "baseline-20261027T175006Z",
+      "label": "Native TP1, MTP2 baseline",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/baseline-20261027T175006Z/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 715.5224520211013,
+        "p50": 735.3216049959883,
+        "p90": 868.073656980414,
+        "p95": 914.1549465130083,
+        "p99": 979.8690648050979
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 716.5589536203416,
+        "p50": 736.1998449778184,
+        "p90": 868.8862329581752,
+        "p95": 914.7456859936938,
+        "p99": 981.1444764200132
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.955370440383765,
+      "dispatch_rps": 9.999921266474214,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 28,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.64682139253279,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 76.0,
+        "p99": 84.0,
+        "max": 89
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.006054490413723511,
+      "within_300ms_fraction": 0.04944500504540868
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "cap2496-20261028T144500Z",
+      "run": "candidate_a",
+      "label": "Native TP2, MTP4; smaller batch cap",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/cap2496-20261028T144500Z/runs/candidate_a/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 567.7551364979126,
+        "p50": 573.4170970390551,
+        "p90": 701.194213994313,
+        "p95": 749.7366509924177,
+        "p99": 843.1806708162186
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 568.7541496013921,
+        "p50": 574.3257220019586,
+        "p90": 702.1945450105704,
+        "p95": 750.8910000033211,
+        "p99": 843.846232618671
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.959823038888942,
+      "dispatch_rps": 9.999855699864042,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 19,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.704339051463165,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.035317860746720484,
+      "within_300ms_fraction": 0.06357214934409687
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "cap2496-20261028T144500Z",
+      "run": "candidate_c",
+      "label": "Native TP2, MTP4; smaller batch cap",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/cap2496-20261028T144500Z/runs/candidate_c/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 566.2590483227965,
+        "p50": 571.4950439869426,
+        "p90": 700.6615360151045,
+        "p95": 752.2780949948356,
+        "p99": 854.2541075032206
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 567.2512915577832,
+        "p50": 572.2707660170272,
+        "p90": 701.3068440137431,
+        "p95": 753.0714270251337,
+        "p99": 854.9367692379748
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.964050192638814,
+      "dispatch_rps": 9.999894732118294,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 19,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.62865792129163,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.10000000000002,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.039354187689202826,
+      "within_300ms_fraction": 0.06357214934409687
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "cap2496-20261028T144500Z",
+      "run": "control_b",
+      "label": "Native TP2, MTP4; smaller batch cap",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/cap2496-20261028T144500Z/runs/control_b/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 564.5477202782965,
+        "p50": 570.5008440418169,
+        "p90": 692.2758289729245,
+        "p95": 737.4040974827949,
+        "p99": 859.6206086047463
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 565.5642844625917,
+        "p50": 571.8418749747798,
+        "p90": 693.5816300101578,
+        "p95": 738.5598469700199,
+        "p99": 860.1828445971481
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.965077331189867,
+      "dispatch_rps": 9.999935841323131,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 18,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.76084762865792,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 83.0,
+        "max": 90
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.03632694248234107,
+      "within_300ms_fraction": 0.05751765893037336
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-20261027T182449Z",
+      "run": "dynamo_b",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-20261027T182449Z/runs/dynamo_b/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 710.5242560689167,
+        "p50": 733.2848060177639,
+        "p90": 870.9061410045251,
+        "p95": 890.2402854873799,
+        "p99": 984.5706942956895
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 711.5494255068727,
+        "p50": 734.0531569789164,
+        "p90": 871.9415209488943,
+        "p95": 891.3303359877318,
+        "p99": 985.6870147807058
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.953418614360118,
+      "dispatch_rps": 9.999962357617795,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 63.04843592330979,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 82.10000000000002,
+        "max": 89
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.0030272452068617556,
+      "within_300ms_fraction": 0.055499495459132187
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-20261027T182449Z",
+      "run": "dynamo_b2",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-20261027T182449Z/runs/dynamo_b2/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 705.1356105791972,
+        "p50": 724.3564430391416,
+        "p90": 860.5424899724312,
+        "p95": 887.219197495142,
+        "p99": 966.8427910597529
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 706.1601938395178,
+        "p50": 724.8368150321767,
+        "p90": 861.1017699586228,
+        "p95": 888.0888824933209,
+        "p99": 968.0960720055737
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.959106795013712,
+      "dispatch_rps": 9.99998194255806,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.45711402623613,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 89
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.0030272452068617556,
+      "within_300ms_fraction": 0.05751765893037336
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-20261027T182449Z",
+      "run": "native_a",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-20261027T182449Z/runs/native_a/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 712.560450913059,
+        "p50": 736.4846679847687,
+        "p90": 870.8989670267329,
+        "p95": 927.4800184939522,
+        "p99": 971.5470035211183
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 713.5992426605891,
+        "p50": 737.8972860169597,
+        "p90": 872.1859090146609,
+        "p95": 928.2682225166354,
+        "p99": 972.6962547108997
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.956263280331589,
+      "dispatch_rps": 9.999877889373758,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.96670030272452,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.5,
+        "p99": 82.0,
+        "max": 93
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.0030272452068617556,
+      "within_300ms_fraction": 0.05146316851664985
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-20261027T182449Z",
+      "run": "native_a2",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-20261027T182449Z/runs/native_a2/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 704.8879763391409,
+        "p50": 729.6991879702546,
+        "p90": 863.3763570105657,
+        "p95": 885.9784390078858,
+        "p99": 975.7616702932864
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 705.918259009687,
+        "p50": 730.7906209607609,
+        "p90": 864.497409958858,
+        "p95": 886.8972914642654,
+        "p99": 976.3207489799244
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.955742005791219,
+      "dispatch_rps": 9.999900815023747,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.36125126135217,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 77.0,
+        "p99": 81.10000000000002,
+        "max": 94
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.009081735620585268,
+      "within_300ms_fraction": 0.056508577194752774
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-20261027T182449Z",
+      "run": "profile_native_unprofiled",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-20261027T182449Z/runs/profile_native_unprofiled/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 705.8344112304942,
+        "p50": 732.1492379996926,
+        "p90": 862.03702702187,
+        "p95": 892.2544250090141,
+        "p99": 957.6773456181401
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 706.8925875444181,
+        "p50": 733.081548998598,
+        "p90": 862.9891130258329,
+        "p95": 893.1128914991859,
+        "p99": 958.1999728165102
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.951703736861772,
+      "dispatch_rps": 9.99986454284199,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.83047426841574,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 81.0,
+        "max": 95
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.005045408678102927,
+      "within_300ms_fraction": 0.054490413723511606
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-v31-20261028T160136Z",
+      "run": "dynamo_b",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-v31-20261028T160136Z/runs/dynamo_b/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 573.4052374512244,
+        "p50": 574.7639689943753,
+        "p90": 701.5599119476974,
+        "p95": 756.1895840044599,
+        "p99": 866.8845106964001
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 574.4170253467558,
+        "p50": 575.6806979770772,
+        "p90": 702.8228149283677,
+        "p95": 757.5326534570195,
+        "p99": 867.471017461503
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.955508614910993,
+      "dispatch_rps": 9.99994606726535,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.626639757820385,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 94
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.03632694248234107,
+      "within_300ms_fraction": 0.06256306760847628
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-v31-20261028T160136Z",
+      "run": "dynamo_b2",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-v31-20261028T160136Z/runs/dynamo_b2/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 569.2594550223058,
+        "p50": 573.4698749729432,
+        "p90": 710.7312470325269,
+        "p95": 754.2063809814863,
+        "p99": 850.720760494005
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 570.2209206250769,
+        "p50": 574.5641280082054,
+        "p90": 711.4788800245151,
+        "p95": 755.1412674947642,
+        "p99": 851.2958519859241
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.964819660500236,
+      "dispatch_rps": 9.999943229414596,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.60343087790111,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 91
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.04137235116044399,
+      "within_300ms_fraction": 0.0615539858728557
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-v31-20261028T160136Z",
+      "run": "native_a",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-v31-20261028T160136Z/runs/native_a/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 576.3515849121636,
+        "p50": 581.7939409753308,
+        "p90": 713.2132360129617,
+        "p95": 755.9684484731406,
+        "p99": 839.2878852318977
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 577.3348832010398,
+        "p50": 582.9189340001903,
+        "p90": 713.8711980078369,
+        "p95": 756.8262399872765,
+        "p99": 840.2979617007081
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.966104357192295,
+      "dispatch_rps": 9.99990972748258,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 63.1130171543895,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.5,
+        "p99": 83.30000000000007,
+        "max": 94
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.04339051463168517,
+      "within_300ms_fraction": 0.06256306760847628
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "dynamo-v31-20261028T160136Z",
+      "run": "native_a2",
+      "label": "One-GPU native/Dynamo, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/dynamo-v31-20261028T160136Z/runs/native_a2/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 568.2329333335157,
+        "p50": 572.8036159998737,
+        "p90": 698.3664549770765,
+        "p95": 752.3705505009275,
+        "p99": 871.9280619174242
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 569.2261221023806,
+        "p50": 573.7780989729799,
+        "p90": 699.1141730104573,
+        "p95": 753.546630992787,
+        "p99": 873.0268989864271
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.951969114339636,
+      "dispatch_rps": 9.999878468043763,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.36125126135217,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 85
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.04036326942482341,
+      "within_300ms_fraction": 0.06357214934409687
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "moe-20261027T192932Z",
+      "run": "candidate_1",
+      "label": "Native TP1, MTP2; MoE kernel tiles",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "compilation-distorted",
+      "source": "experiments/moe-20261027T192932Z/runs/candidate_1/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 906.188914922722,
+        "p50": 757.066361955367,
+        "p90": 1305.7248590048403,
+        "p95": 2464.2270395124797,
+        "p99": 3538.8753441162426
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 907.221576231358,
+        "p50": 758.2557360292412,
+        "p90": 1306.9212340051308,
+        "p95": 2465.52791853901,
+        "p99": 3539.9229381175264
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.952402378728166,
+      "dispatch_rps": 9.99995065337607,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.867810292633706,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 83.0,
+        "max": 97
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.0010090817356205853,
+      "within_300ms_fraction": 0.04742684157416751
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "moe-20261027T192932Z",
+      "run": "candidate_2",
+      "label": "Native TP1, MTP2; MoE kernel tiles",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/moe-20261027T192932Z/runs/candidate_2/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 707.4407671579874,
+        "p50": 732.8793679480441,
+        "p90": 864.4782420014963,
+        "p95": 887.6480849867221,
+        "p99": 960.5299727874808
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 708.476742345938,
+        "p50": 733.8257689843886,
+        "p90": 865.7912359922193,
+        "p95": 888.8627240085043,
+        "p99": 961.5362193377223
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.956086768761542,
+      "dispatch_rps": 9.999959648548554,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 26,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.660948536831484,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 76.0,
+        "p99": 83.0,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.004036326942482341,
+      "within_300ms_fraction": 0.05348133198789102
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "moe-20261027T192932Z",
+      "run": "default_1",
+      "label": "Native TP1, MTP2; MoE kernel tiles",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/moe-20261027T192932Z/runs/default_1/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 703.6866434935789,
+        "p50": 728.2341219834052,
+        "p90": 858.6152290226892,
+        "p95": 888.514045975171,
+        "p99": 968.0782372131945
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 704.7215340216503,
+        "p50": 728.8857729872689,
+        "p90": 859.4190760049969,
+        "p95": 889.4492584804539,
+        "p99": 969.3748093210162
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.955390277409313,
+      "dispatch_rps": 9.999927535373907,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 28,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.79515640766902,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 84.0,
+        "max": 93
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.005045408678102927,
+      "within_300ms_fraction": 0.054490413723511606
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "mtp4-20261027T202714Z",
+      "run": "mtp2_a",
+      "label": "Native TP2; MTP2 vs MTP4",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/mtp4-20261027T202714Z/runs/mtp2_a/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 586.2787765884015,
+        "p50": 589.1358199878596,
+        "p90": 718.1377789820544,
+        "p95": 749.975098966388,
+        "p99": 842.2623645456044
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 587.2527259436279,
+        "p50": 590.4790720087476,
+        "p90": 719.3218589527532,
+        "p95": 751.3661024568137,
+        "p99": 843.1271660025234
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.957091065587933,
+      "dispatch_rps": 9.999967489598387,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 27,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.87487386478305,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 83.10000000000002,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.025227043390514632,
+      "within_300ms_fraction": 0.0615539858728557
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "mtp4-20261027T202714Z",
+      "run": "mtp4_b",
+      "label": "Native TP2; MTP2 vs MTP4",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/mtp4-20261027T202714Z/runs/mtp4_b/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 565.1262846704165,
+        "p50": 567.7533249836415,
+        "p90": 691.0708340001293,
+        "p95": 748.0885370168835,
+        "p99": 854.1276887175627
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 566.1072787825454,
+        "p50": 568.7592979520559,
+        "p90": 692.009825957939,
+        "p95": 749.072641483508,
+        "p99": 855.0783087033778
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.965315671042408,
+      "dispatch_rps": 9.999977757826276,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 17,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.69323915237134,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 81.0,
+        "max": 88
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.035317860746720484,
+      "within_300ms_fraction": 0.05751765893037336
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "mtp4-20261027T202714Z",
+      "run": "mtp4_c",
+      "label": "Native TP2; MTP2 vs MTP4",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/mtp4-20261027T202714Z/runs/mtp4_c/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 567.875259413382,
+        "p50": 573.6979169887491,
+        "p90": 690.5851819901727,
+        "p95": 738.9791714958847,
+        "p99": 837.6792965515052
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 568.865693797847,
+        "p50": 574.8732999782078,
+        "p90": 691.6019509662874,
+        "p95": 739.8453519854229,
+        "p99": 838.8272434589454
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.963754310733977,
+      "dispatch_rps": 9.9999531733555,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 18,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.80726538849647,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 83.20000000000005,
+        "max": 94
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.04036326942482341,
+      "within_300ms_fraction": 0.05751765893037336
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "native-vs-dynamo2-v31-20261028T211831Z",
+      "run": "dynamo_rr",
+      "label": "Two TP1 copies, MTP4; router comparison",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "compilation-distorted",
+      "source": "experiments/native-vs-dynamo2-v31-20261028T211831Z/runs/dynamo_rr/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 931.360190159474,
+        "p50": 557.1060600341298,
+        "p90": 839.1620509792119,
+        "p95": 4329.994967003586,
+        "p99": 8040.8589314785795
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 932.4051146891826,
+        "p50": 557.9725479474291,
+        "p90": 840.3640349861234,
+        "p95": 4330.654649471398,
+        "p99": 8041.776542871959
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.9621636434744,
+      "dispatch_rps": 9.999938559674947,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": null,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.98486377396569,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 83.0,
+        "max": 94
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.039354187689202826,
+      "within_300ms_fraction": 0.05348133198789102
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "native-vs-dynamo2-v31-20261028T211831Z",
+      "run": "dynamo_rr_repeat",
+      "label": "Two TP1 copies, MTP4; router comparison",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/native-vs-dynamo2-v31-20261028T211831Z/runs/dynamo_rr_repeat/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 527.1333693840337,
+        "p50": 542.3091620323248,
+        "p90": 646.3195389951579,
+        "p95": 678.6791830090806,
+        "p99": 784.0599604998715
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 528.1706908881625,
+        "p50": 543.2768760365434,
+        "p90": 647.062100993935,
+        "p95": 679.6733255323488,
+        "p99": 785.3133290132973
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.954334730602188,
+      "dispatch_rps": 9.999974559054223,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 25,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.872855701311806,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 83.10000000000002,
+        "max": 89
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.039354187689202826,
+      "within_300ms_fraction": 0.05852674066599395
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "native-vs-dynamo2-v31-20261028T211831Z",
+      "run": "dynamo_rr_warm",
+      "label": "Two TP1 copies, MTP4; router comparison",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/native-vs-dynamo2-v31-20261028T211831Z/runs/dynamo_rr_warm/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 526.0323062435137,
+        "p50": 541.8299360317178,
+        "p90": 642.9475939949043,
+        "p95": 670.9879944974091,
+        "p99": 768.8652904354967
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 527.0821680612045,
+        "p50": 542.8140399744734,
+        "p90": 643.8564590062015,
+        "p95": 672.287319030147,
+        "p99": 769.9866072041914
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.959665191426243,
+      "dispatch_rps": 9.999895620583755,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 22,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.89606458123108,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 83.10000000000002,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.044399596367305755,
+      "within_300ms_fraction": 0.05953582240161453
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "native-vs-dynamo2-v31-20261028T211831Z",
+      "run": "native_rr",
+      "label": "Two TP1 copies, MTP4; router comparison",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/native-vs-dynamo2-v31-20261028T211831Z/runs/native_rr/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 519.8659063738609,
+        "p50": 533.9560320135206,
+        "p90": 631.5424970234744,
+        "p95": 663.1066120462492,
+        "p99": 753.7378072971478
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 520.9055853579766,
+        "p50": 535.3600750095211,
+        "p90": 632.2708009975031,
+        "p95": 664.1933640639763,
+        "p99": 754.7186981188133
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.960259688820022,
+      "dispatch_rps": 9.999860192156644,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 23,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.89909182643794,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 83.0,
+        "max": 98
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.04742684157416751,
+      "within_300ms_fraction": 0.05751765893037336
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "overnight-20261029T044448Z",
+      "run": "control",
+      "label": "Two TP1 copies, MTP4; text-only flag",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/overnight-20261029T044448Z/text-lmonly/runs/control/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 515.2634304479906,
+        "p50": 533.7420709547587,
+        "p90": 627.4213879951276,
+        "p95": 654.3389459839091,
+        "p99": 721.3902012270412
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 516.3234182649084,
+        "p50": 534.7791039966978,
+        "p90": 628.6298409686424,
+        "p95": 655.6882914737798,
+        "p99": 722.340409801109
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.960420720731955,
+      "dispatch_rps": 9.999953664053269,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 25,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.7991927346115,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 93
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.045408678102926335,
+      "within_300ms_fraction": 0.05953582240161453
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "overnight-20261029T044448Z",
+      "run": "lmonly",
+      "label": "Two TP1 copies, MTP4; text-only flag",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/overnight-20261029T044448Z/text-lmonly/runs/lmonly/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 520.7764383084865,
+        "p50": 535.8275129692629,
+        "p90": 638.5688639711589,
+        "p95": 679.4529419858009,
+        "p99": 779.4821421033704
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 521.821378580871,
+        "p50": 536.5738499676809,
+        "p90": 639.4004539470188,
+        "p95": 680.4211779672187,
+        "p99": 780.4161964682863
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.958127857387632,
+      "dispatch_rps": 9.999876588793725,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 27,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.853683148335016,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 83.0,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.044399596367305755,
+      "within_300ms_fraction": 0.060544904137235116
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "replica-vs-tp2-v31-20261028T202250Z",
+      "run": "dual",
+      "label": "TP2 vs two TP1 copies, MTP4",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/replica-vs-tp2-v31-20261028T202250Z/runs/dual/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 519.3701353032536,
+        "p50": 534.4188589951955,
+        "p90": 635.2653339854442,
+        "p95": 668.217028491199,
+        "p99": 742.9187904170251
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 520.4302837252692,
+        "p50": 535.6869189417921,
+        "p90": 636.359863972757,
+        "p95": 669.0944834845141,
+        "p99": 743.5233942756897
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.963026066583897,
+      "dispatch_rps": 9.999892093591875,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 22,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.81432896064581,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 81.20000000000005,
+        "max": 93
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.045408678102926335,
+      "within_300ms_fraction": 0.05852674066599395
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "replica-vs-tp2-v31-20261028T202250Z",
+      "run": "tp2",
+      "label": "TP2 vs two TP1 copies, MTP4",
+      "gpus": 2,
+      "vllm": "0.31.0",
+      "status": "measured",
+      "source": "experiments/replica-vs-tp2-v31-20261028T202250Z/runs/tp2/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 576.075876142755,
+        "p50": 577.2096249856986,
+        "p90": 727.6212940341793,
+        "p95": 755.7248355005868,
+        "p99": 842.8509287361525
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 577.0577507373251,
+        "p50": 578.3676219871268,
+        "p90": 728.366437018849,
+        "p95": 756.5221634868067,
+        "p99": 844.9986518127847
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.965685622408357,
+      "dispatch_rps": 9.99981503301559,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 28,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.70332996972755,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 90
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.039354187689202826,
+      "within_300ms_fraction": 0.05852674066599395
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "tail-trace-20261027T212738Z",
+      "run": "control_a",
+      "label": "Native TP2, MTP4; tail diagnostic",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/tail-trace-20261027T212738Z/runs/control_a/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 562.9726700728156,
+        "p50": 568.9452420338057,
+        "p90": 687.3025940149091,
+        "p95": 742.2974619839806,
+        "p99": 837.6690334931483
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 563.972761352804,
+        "p50": 570.064542000182,
+        "p90": 688.0221479805186,
+        "p95": 743.779454001924,
+        "p99": 838.9735539909453
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.965679684868826,
+      "dispatch_rps": 9.999883928821527,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 17,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.716448032290614,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 76.0,
+        "p99": 80.10000000000002,
+        "max": 90
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.039354187689202826,
+      "within_300ms_fraction": 0.056508577194752774
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "tail-trace-20261027T212738Z",
+      "run": "traced_b",
+      "label": "Native TP2, MTP4; tail diagnostic",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "profile-distorted",
+      "source": "experiments/tail-trace-20261027T212738Z/runs/traced_b/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 6750.175007915172,
+        "p50": 684.8149429424666,
+        "p90": 22807.82770202495,
+        "p95": 25816.507290495792,
+        "p99": 29136.045099172043
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 6864.519540875114,
+        "p50": 685.6541329761967,
+        "p90": 22809.05017501209,
+        "p95": 25817.491981491912,
+        "p99": 29137.21459430526
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.964277719700458,
+      "dispatch_rps": 9.99987339594817,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 20,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.86175580221998,
+        "min": 16,
+        "p50": 64.0,
+        "p95": 77.0,
+        "p99": 82.10000000000002,
+        "max": 93
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.020181634712411706,
+      "within_300ms_fraction": 0.033299697275479316
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "tp2-20261027T195550Z",
+      "run": "tp1_a",
+      "label": "Native TP1 vs TP2, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/tp2-20261027T195550Z/runs/tp1_a/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 713.1610619633502,
+        "p50": 737.9248780198395,
+        "p90": 868.1760850013234,
+        "p95": 907.2444355115294,
+        "p99": 1004.0659460995812
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 714.1809182829627,
+        "p50": 739.0600259532221,
+        "p90": 869.2646539420821,
+        "p95": 907.9658649861813,
+        "p99": 1004.7667858365459
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.953306108280492,
+      "dispatch_rps": 9.9999095033401,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 16,
+      "output_tokens": {
+        "n": 991,
+        "mean": 63.07971745711403,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 82.0,
+        "max": 99
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.0030272452068617556,
+      "within_300ms_fraction": 0.04944500504540868
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "tp2-20261027T195550Z",
+      "run": "tp1_d",
+      "label": "Native TP1 vs TP2, MTP2",
+      "gpus": 1,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/tp2-20261027T195550Z/runs/tp1_d/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 717.0377184765994,
+        "p50": 738.1013120175339,
+        "p90": 872.9274289798923,
+        "p95": 928.6631390277762,
+        "p99": 990.058788872557
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 718.0744871207819,
+        "p50": 739.3179570208304,
+        "p90": 873.9501589443535,
+        "p95": 929.5628725085407,
+        "p99": 991.3643591629808
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.95536627629178,
+      "dispatch_rps": 9.999930869973028,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 25,
+      "output_tokens": {
+        "n": 991,
+        "mean": 63.14732593340061,
+        "min": 16,
+        "p50": 66.0,
+        "p95": 77.0,
+        "p99": 82.20000000000005,
+        "max": 88
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.005045408678102927,
+      "within_300ms_fraction": 0.050454086781029264
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "tp2-20261027T195550Z",
+      "run": "tp2_b",
+      "label": "Native TP1 vs TP2, MTP2",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/tp2-20261027T195550Z/runs/tp2_b/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 589.4727401832315,
+        "p50": 598.7421129830182,
+        "p90": 726.754950999748,
+        "p95": 750.0600054918323,
+        "p99": 856.5627860836685
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 590.468805396258,
+        "p50": 599.671772972215,
+        "p90": 728.3162740059197,
+        "p95": 750.9210874850396,
+        "p99": 857.8171263914555
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.964974790257736,
+      "dispatch_rps": 9.999848826724264,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 27,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.80121089808274,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 77.0,
+        "p99": 84.0,
+        "max": 92
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.02119071644803229,
+      "within_300ms_fraction": 0.060544904137235116
+    },
+    {
+      "workload": "gemma4-text",
+      "series": "tp2-20261027T195550Z",
+      "run": "tp2_c",
+      "label": "Native TP1 vs TP2, MTP2",
+      "gpus": 2,
+      "vllm": "0.29.0",
+      "status": "measured",
+      "source": "experiments/tp2-20261027T195550Z/runs/tp2_c/measured/summary.json",
+      "requests": 991,
+      "offered_rps": 10,
+      "latency_ms": {
+        "n": 991,
+        "mean": 586.2310825873873,
+        "p50": 591.0156160243787,
+        "p90": 728.0455990112387,
+        "p95": 749.1632174933329,
+        "p99": 838.6108467762826
+      },
+      "arrival_ms": {
+        "n": 991,
+        "mean": 587.2195214242228,
+        "p50": 592.1808460261673,
+        "p90": 728.5657440079376,
+        "p95": 750.0641265360173,
+        "p99": 839.8772988060957
+      },
+      "ttft_ms": null,
+      "completed_rps": 9.96898027211189,
+      "dispatch_rps": 9.999906361383697,
+      "http_failures": 0,
+      "truncations": 0,
+      "strict_format_failures": 27,
+      "output_tokens": {
+        "n": 991,
+        "mean": 62.648839556004035,
+        "min": 16,
+        "p50": 65.0,
+        "p95": 76.0,
+        "p99": 82.0,
+        "max": 95
+      },
+      "input_tokens": {
+        "n": 991,
+        "mean": 6133.5923309788095,
+        "min": 5834,
+        "p50": 6085.0,
+        "p95": 6530.0,
+        "p99": 7062.600000000001,
+        "max": 8227
+      },
+      "within_200ms_fraction": 0.028254288597376387,
+      "within_300ms_fraction": 0.06357214934409687
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "full-dataset",
+      "run": "full-dynamo2-mxfp4-final-r1",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/full-dynamo2-mxfp4-final-r1/measured-summary.json",
+      "requests": 25648,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 25648,
+        "min": 177.181405,
+        "p50": 269.697045,
+        "p95": 360.2167673999999,
+        "p99": 429.79182922999996,
+        "max": 638.713862,
+        "mean": 276.87619312570183,
+        "p90": 331.1219086
+      },
+      "ttft_ms": {
+        "count": 25648,
+        "min": 11.614946999999999,
+        "p50": 17.8095225,
+        "p95": 27.219642449999988,
+        "p99": 41.64300027,
+        "max": 49.319134,
+        "mean": 19.077650632135057,
+        "p90": 23.863178599999998
+      },
+      "completed_rps": 49.975662995707985,
+      "dispatch_rps": 50.00005049123904,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 25648,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 80.0,
+        "max": 116.0,
+        "mean": 52.57977230193387
+      },
+      "input_tokens": {
+        "count": 25648,
+        "min": 601.0,
+        "p50": 706.0,
+        "p95": 988.6499999999978,
+        "p99": 1218.0,
+        "max": 2060.0,
+        "mean": 737.625662819713
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 19442,
+          "fraction_of_all_offered": 0.7580318153462259,
+          "goodput_rps": 37.883142543767725,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "full-dataset",
+      "run": "full-dynamo2-mxfp4-final-r2",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/full-dynamo2-mxfp4-final-r2/measured-summary.json",
+      "requests": 25648,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 25648,
+        "min": 175.159313,
+        "p50": 269.61845,
+        "p95": 359.2810394,
+        "p99": 429.5289943099999,
+        "max": 675.135324,
+        "mean": 276.57687487808016,
+        "p90": 330.6803199
+      },
+      "ttft_ms": {
+        "count": 25648,
+        "min": 11.516262,
+        "p50": 17.8203515,
+        "p95": 27.20046139999999,
+        "p99": 42.412232069999995,
+        "max": 50.381831999999996,
+        "mean": 19.05852716601684,
+        "p90": 23.734071899999996
+      },
+      "completed_rps": 49.96958443938658,
+      "dispatch_rps": 50.00008285934112,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 25648,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 80.0,
+        "max": 123.0,
+        "mean": 52.556768558951966
+      },
+      "input_tokens": {
+        "count": 25648,
+        "min": 601.0,
+        "p50": 706.0,
+        "p95": 988.6499999999978,
+        "p99": 1218.0,
+        "max": 2060.0,
+        "mean": 737.625662819713
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 19466,
+          "fraction_of_all_offered": 0.7589675608234561,
+          "goodput_rps": 37.92529361732296,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "full-dataset",
+      "run": "full-vllm2-mxfp4-final-r1",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/full-vllm2-mxfp4-final-r1/measured-summary.json",
+      "requests": 25648,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 25648,
+        "min": 171.537299,
+        "p50": 269.729397,
+        "p95": 359.51053145,
+        "p99": 428.5567507399999,
+        "max": 609.329145,
+        "mean": 276.8586116940892,
+        "p90": 330.53308339999995
+      },
+      "ttft_ms": {
+        "count": 25648,
+        "min": 12.233084,
+        "p50": 18.542097499999997,
+        "p95": 26.283463199999982,
+        "p99": 31.170647129999992,
+        "max": 49.640799,
+        "mean": 19.350735726957264,
+        "p90": 24.0027632
+      },
+      "completed_rps": 49.969658452806584,
+      "dispatch_rps": 50.00005952964548,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 25648,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 80.0,
+        "max": 111.0,
+        "mean": 52.56027760449158
+      },
+      "input_tokens": {
+        "count": 25648,
+        "min": 601.0,
+        "p50": 706.0,
+        "p95": 988.6499999999978,
+        "p99": 1218.0,
+        "max": 2060.0,
+        "mean": 737.625662819713
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 19434,
+          "fraction_of_all_offered": 0.7577199001871491,
+          "goodput_rps": 37.86300461524654,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "full-dataset",
+      "run": "full-vllm2-mxfp4-final-r2",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/full-vllm2-mxfp4-final-r2/measured-summary.json",
+      "requests": 25648,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 25648,
+        "min": 175.788955,
+        "p50": 269.8076835,
+        "p95": 360.24084799999986,
+        "p99": 430.11723873,
+        "max": 673.819192,
+        "mean": 277.0908054020976,
+        "p90": 331.2094312
+      },
+      "ttft_ms": {
+        "count": 25648,
+        "min": 12.775155,
+        "p50": 18.5667975,
+        "p95": 26.1952929,
+        "p99": 31.367485099999996,
+        "max": 50.014658999999995,
+        "mean": 19.359529514699002,
+        "p90": 23.968468899999998
+      },
+      "completed_rps": 49.97567640260547,
+      "dispatch_rps": 50.000075560023724,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 25648,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 80.0,
+        "max": 123.0,
+        "mean": 52.59302869619464
+      },
+      "input_tokens": {
+        "count": 25648,
+        "min": 601.0,
+        "p50": 706.0,
+        "p95": 988.6499999999978,
+        "p99": 1218.0,
+        "max": 2060.0,
+        "mean": 737.625662819713
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 19329,
+          "fraction_of_all_offered": 0.753626013724267,
+          "goodput_rps": 37.662969790469475,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "full-dataset",
+      "run": "full-vllm2-mxfp4-final-r3",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/full-vllm2-mxfp4-final-r3/measured-summary.json",
+      "requests": 25648,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 25648,
+        "min": 176.234666,
+        "p50": 269.97982,
+        "p95": 360.21824845,
+        "p99": 430.44440544999975,
+        "max": 640.237819,
+        "mean": 277.1494774665471,
+        "p90": 331.4039814
+      },
+      "ttft_ms": {
+        "count": 25648,
+        "min": 12.689779999999999,
+        "p50": 18.55621,
+        "p95": 26.242545299999996,
+        "p99": 31.247432119999985,
+        "max": 52.508129,
+        "mean": 19.355570319907986,
+        "p90": 23.975856299999997
+      },
+      "completed_rps": 49.976372227713746,
+      "dispatch_rps": 50.00008061521166,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 25648,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 80.0,
+        "max": 116.0,
+        "mean": 52.577471927635685
+      },
+      "input_tokens": {
+        "count": 25648,
+        "min": 601.0,
+        "p50": 706.0,
+        "p95": 988.6499999999978,
+        "p99": 1218.0,
+        "max": 2060.0,
+        "mean": 737.625662819713
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 19329,
+          "fraction_of_all_offered": 0.753626013724267,
+          "goodput_rps": 37.66349418237208,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "pilot-vllm1",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "pilot",
+      "source": "results/pilot-vllm1/measured-summary.json",
+      "requests": 252,
+      "offered_rps": 5.0,
+      "latency_ms": {
+        "count": 252,
+        "min": 324.532647,
+        "p50": 451.7244405,
+        "p95": 579.14580475,
+        "p99": 663.2285100900001,
+        "max": 701.55274,
+        "mean": 462.3700766111111,
+        "p90": 557.0060842
+      },
+      "ttft_ms": {
+        "count": 252,
+        "min": 29.021592,
+        "p50": 34.3830605,
+        "p95": 43.00240005,
+        "p99": 55.029911490000096,
+        "max": 63.24055,
+        "mean": 35.14994436507937,
+        "p90": 40.6547526
+      },
+      "completed_rps": 4.977757630174716,
+      "dispatch_rps": 5.000086167221984,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 252,
+        "min": 38.0,
+        "p50": 53.0,
+        "p95": 69.44999999999999,
+        "p99": 77.0,
+        "max": 80.0,
+        "mean": 54.448412698412696
+      },
+      "input_tokens": {
+        "count": 252,
+        "min": 601.0,
+        "p50": 713.0,
+        "p95": 1128.1,
+        "p99": 1608.340000000006,
+        "max": 2060.0,
+        "mean": 785.4484126984127
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo-disagg-fp8",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "failed-requests",
+      "source": "results/screen-dynamo-disagg-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 1256,
+        "min": 534.483664,
+        "p50": 116433.95045149999,
+        "p95": 120262.736237,
+        "p99": 120651.02062075,
+        "max": 120896.809001,
+        "mean": 96241.0129923742
+      },
+      "ttft_ms": {
+        "count": 1256,
+        "min": 319.730775,
+        "p50": 115199.72335849999,
+        "p95": 118790.94110524999,
+        "p99": 119972.80916495,
+        "max": 120262.30236,
+        "mean": 94811.67402681288
+      },
+      "completed_rps": 6.96849468206281,
+      "dispatch_rps": 50.0003036347215,
+      "http_failures": 1744,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 1256,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 73.0,
+        "max": 82.0,
+        "mean": 52.628184713375795
+      },
+      "input_tokens": {
+        "count": 1256,
+        "min": 615.0,
+        "p50": 707.0,
+        "p95": 1082.5,
+        "p99": 1262.45,
+        "max": 1547.0,
+        "mean": 756.0573248407643
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo-disagg-fp8-ipv4",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "failed-requests",
+      "source": "results/screen-dynamo-disagg-fp8-ipv4/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 2943,
+        "min": 472.496084,
+        "p50": 81980.653327,
+        "p95": 117650.1898522,
+        "p99": 119680.12945732,
+        "max": 120335.030888,
+        "mean": 82623.38711290045
+      },
+      "ttft_ms": {
+        "count": 2943,
+        "min": 249.452989,
+        "p50": 80913.899716,
+        "p95": 117149.9569331,
+        "p99": 119065.10024455999,
+        "max": 119693.02391199999,
+        "mean": 81856.09244325926
+      },
+      "completed_rps": 16.702275819965394,
+      "dispatch_rps": 50.00043535890909,
+      "http_failures": 57,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 2943,
+        "min": 36.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 75.57999999999993,
+        "max": 88.0,
+        "mean": 52.960244648318046
+      },
+      "input_tokens": {
+        "count": 2943,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1940197077812
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo-tp2-fp8",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo-tp2-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 210.290743,
+        "p50": 308.424242,
+        "p95": 408.8148633,
+        "p99": 448.1155796399999,
+        "max": 529.743171,
+        "mean": 317.02254309700004,
+        "p90": 385.156139
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 12.594292999999999,
+        "p50": 17.996004,
+        "p95": 43.1706406,
+        "p99": 43.23813885,
+        "max": 44.215469,
+        "mean": 20.932826220666666,
+        "p90": 42.1466207
+      },
+      "completed_rps": 49.78045507018286,
+      "dispatch_rps": 50.0003454125229,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 36.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 84.0,
+        "mean": 52.839333333333336
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 1215,
+          "fraction_of_all_offered": 0.405,
+          "goodput_rps": 20.161084303424058,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo1-base",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo1-base/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 826.387333,
+        "p50": 5137.803857999999,
+        "p95": 7593.388697199997,
+        "p99": 8186.780369519997,
+        "max": 9116.816908,
+        "mean": 5112.356131059667,
+        "p90": 7248.0522438
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 27.729868999999997,
+        "p50": 2469.0915575,
+        "p95": 5055.566526399999,
+        "p99": 5318.990461189999,
+        "max": 5527.890678,
+        "mean": 2495.4263361933336,
+        "p90": 4667.8666533
+      },
+      "completed_rps": 45.360430397142096,
+      "dispatch_rps": 50.00047234857692,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 88.0,
+        "mean": 52.584666666666664
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo1-fp8",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo1-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 235.243844,
+        "p50": 336.89268100000004,
+        "p95": 437.2230259999999,
+        "p99": 487.26967427999995,
+        "max": 576.994606,
+        "mean": 344.27040245233337,
+        "p90": 409.0446491
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.095315999999999,
+        "p50": 18.7816205,
+        "p95": 30.256649099999862,
+        "p99": 42.59217637,
+        "max": 44.63212,
+        "mean": 20.11808668133333,
+        "p90": 24.678405099999996
+      },
+      "completed_rps": 49.748974425936936,
+      "dispatch_rps": 50.00038605166359,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 86.0,
+        "mean": 52.90233333333333
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 514,
+          "fraction_of_all_offered": 0.17133333333333334,
+          "goodput_rps": 8.523657618310528,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo1-mxfp4",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo1-mxfp4/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 222.607815,
+        "p50": 345.256134,
+        "p95": 464.71348539999997,
+        "p99": 552.5013154999988,
+        "max": 802.116186,
+        "mean": 354.67987844733335,
+        "p90": 428.9394337
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.490535999999999,
+        "p50": 19.6597515,
+        "p95": 41.94932695,
+        "p99": 43.0054751,
+        "max": 44.021358,
+        "mean": 21.684814214,
+        "p90": 28.995960799999995
+      },
+      "completed_rps": 49.73164879642165,
+      "dispatch_rps": 50.0004980426401,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 80.0,
+        "max": 123.0,
+        "mean": 52.45433333333333
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 457,
+          "fraction_of_all_offered": 0.15233333333333332,
+          "goodput_rps": 7.575787833321565,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo1-tuned",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo1-tuned/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 369.74588,
+        "p50": 540.8549425000001,
+        "p95": 709.200037,
+        "p99": 786.9520080499991,
+        "max": 908.640589,
+        "mean": 553.845769812,
+        "p90": 664.967336
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 18.211385999999997,
+        "p50": 29.263799499999998,
+        "p95": 41.45420265,
+        "p99": 43.41626802,
+        "max": 51.616082,
+        "mean": 30.105339548333333,
+        "p90": 37.3452737
+      },
+      "completed_rps": 49.52344727133248,
+      "dispatch_rps": 50.00046702170126,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 76.0,
+        "max": 84.0,
+        "mean": 52.537333333333336
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo2-fp8",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo2-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 211.400697,
+        "p50": 309.1984585,
+        "p95": 404.42348434999997,
+        "p99": 448.79419806999954,
+        "max": 525.975921,
+        "mean": 316.5718808253333,
+        "p90": 378.2138239
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 13.535857,
+        "p50": 18.480362,
+        "p95": 42.416209349999995,
+        "p99": 43.403429419999995,
+        "max": 44.414849,
+        "mean": 21.956109793333333,
+        "p90": 42.346956999999996
+      },
+      "completed_rps": 49.71499277003204,
+      "dispatch_rps": 50.0003691232652,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 92.0,
+        "mean": 52.847
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 1186,
+          "fraction_of_all_offered": 0.3953333333333333,
+          "goodput_rps": 19.653993808419333,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo2-mxfp4",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo2-mxfp4/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 171.790892,
+        "p50": 273.385712,
+        "p95": 362.55537914999996,
+        "p99": 444.68365393999994,
+        "max": 597.02873,
+        "mean": 281.095425685,
+        "p90": 340.0396813
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 13.239752,
+        "p50": 18.085304999999998,
+        "p95": 30.05430199999999,
+        "p99": 42.59790547999999,
+        "max": 44.273212,
+        "mean": 19.604438734333336,
+        "p90": 24.7999825
+      },
+      "completed_rps": 49.75648625651036,
+      "dispatch_rps": 50.00042816221928,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 81.0,
+        "max": 111.0,
+        "mean": 52.63966666666666
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 2177,
+          "fraction_of_all_offered": 0.7256666666666667,
+          "goodput_rps": 36.10662352680768,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo2-mxfp4-kv",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo2-mxfp4-kv/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 178.402418,
+        "p50": 273.55568500000004,
+        "p95": 362.4178105,
+        "p99": 428.07269952999985,
+        "max": 599.525543,
+        "mean": 281.016545689,
+        "p90": 335.3279516
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 13.423026,
+        "p50": 18.1665285,
+        "p95": 28.38068699999994,
+        "p99": 42.57428992,
+        "max": 44.633483,
+        "mean": 19.572776366333333,
+        "p90": 24.7768925
+      },
+      "completed_rps": 49.816553885498244,
+      "dispatch_rps": 50.00042375734263,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.04999999999973,
+        "p99": 79.0,
+        "max": 111.0,
+        "mean": 52.568333333333335
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 2204,
+          "fraction_of_all_offered": 0.7346666666666667,
+          "goodput_rps": 36.59856158787938,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo2-mxfp4-ngram",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo2-mxfp4-ngram/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 194.110079,
+        "p50": 329.93563900000004,
+        "p95": 478.31701215,
+        "p99": 593.98585635,
+        "max": 726.558492,
+        "mean": 344.62266654666666,
+        "p90": 431.86878119999994
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 11.840169,
+        "p50": 17.986584,
+        "p95": 29.963487149999974,
+        "p99": 42.59533663999999,
+        "max": 43.622887,
+        "mean": 19.300934072,
+        "p90": 25.2658982
+      },
+      "completed_rps": 49.65461065508782,
+      "dispatch_rps": 50.0004079151318,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 82.0,
+        "max": 111.0,
+        "mean": 52.55
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 808,
+          "fraction_of_all_offered": 0.2693333333333333,
+          "goodput_rps": 13.373641803103652,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-dynamo2-tuned",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-dynamo2-tuned/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 304.491436,
+        "p50": 437.2731155,
+        "p95": 573.1122535,
+        "p99": 641.7507065799994,
+        "max": 741.397572,
+        "mean": 448.22964014966664,
+        "p90": 539.9848422
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 16.659800999999998,
+        "p50": 24.466109,
+        "p95": 42.0216191,
+        "p99": 43.03099457,
+        "max": 44.069565,
+        "mean": 25.75458081133333,
+        "p90": 32.65372719999999
+      },
+      "completed_rps": 49.55697954192091,
+      "dispatch_rps": 50.00044245973398,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 76.0,
+        "max": 88.0,
+        "mean": 52.641
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm-tp2-fp8",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm-tp2-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 207.529237,
+        "p50": 309.77064299999995,
+        "p95": 411.39505569999994,
+        "p99": 449.75451709999993,
+        "max": 527.399551,
+        "mean": 318.68679671533334,
+        "p90": 386.3570505
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 13.884383999999999,
+        "p50": 18.478447499999998,
+        "p95": 26.728660249999997,
+        "p99": 30.804081739999972,
+        "max": 39.178484999999995,
+        "mean": 19.386190030666665,
+        "p90": 24.9199621
+      },
+      "completed_rps": 49.760816865244344,
+      "dispatch_rps": 50.00042235768573,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 86.0,
+        "mean": 52.989666666666665
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 1169,
+          "fraction_of_all_offered": 0.38966666666666666,
+          "goodput_rps": 19.390131638490214,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm1-base",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm1-base/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 803.994591,
+        "p50": 5117.172101,
+        "p95": 7534.3295419999995,
+        "p99": 8090.875175979997,
+        "max": 9006.524994,
+        "mean": 5080.539865912667,
+        "p90": 7193.1443567999995
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 28.604581999999997,
+        "p50": 2442.541617,
+        "p95": 5002.418576499999,
+        "p99": 5280.393509799999,
+        "max": 5379.510042,
+        "mean": 2467.0686425606664,
+        "p90": 4611.9453716
+      },
+      "completed_rps": 45.400620007583335,
+      "dispatch_rps": 50.00056711463504,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.04999999999973,
+        "p99": 76.0,
+        "max": 88.0,
+        "mean": 52.67033333333333
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm1-fp8",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm1-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 229.544109,
+        "p50": 336.530185,
+        "p95": 438.25882079999997,
+        "p99": 487.59289536999984,
+        "max": 624.486334,
+        "mean": 344.3732156126667,
+        "p90": 410.7627344
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.674785,
+        "p50": 19.606493999999998,
+        "p95": 25.97210394999999,
+        "p99": 28.782782769999997,
+        "max": 46.105093,
+        "mean": 20.02200943933333,
+        "p90": 24.140673399999997
+      },
+      "completed_rps": 49.70156792281196,
+      "dispatch_rps": 50.00038562818256,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 92.0,
+        "mean": 52.82966666666667
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 510,
+          "fraction_of_all_offered": 0.17,
+          "goodput_rps": 8.449266546878032,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm1-mxfp4",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm1-mxfp4/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 223.955631,
+        "p50": 347.0672415,
+        "p95": 465.3353100499999,
+        "p99": 561.83342202,
+        "max": 749.066021,
+        "mean": 356.57158902966665,
+        "p90": 430.6162749
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 15.063343999999999,
+        "p50": 20.5087285,
+        "p95": 30.116681099999994,
+        "p99": 34.742570689999994,
+        "max": 43.639562,
+        "mean": 21.620252924333332,
+        "p90": 27.417674299999998
+      },
+      "completed_rps": 49.732089198073204,
+      "dispatch_rps": 50.00035428477109,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 81.0,
+        "max": 113.0,
+        "mean": 52.591
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 437,
+          "fraction_of_all_offered": 0.14566666666666667,
+          "goodput_rps": 7.244307659852663,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm1-tuned",
+      "gpus": 1,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm1-tuned/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 373.995755,
+        "p50": 542.3473465,
+        "p95": 710.20712345,
+        "p99": 790.1506598099988,
+        "max": 916.161342,
+        "mean": 555.347421294,
+        "p90": 665.1259244
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 18.853616,
+        "p50": 30.415767,
+        "p95": 39.217226849999996,
+        "p99": 43.83678491,
+        "max": 51.146598999999995,
+        "mean": 30.750772575333333,
+        "p90": 36.4393296
+      },
+      "completed_rps": 49.5224054897862,
+      "dispatch_rps": 50.000433604127004,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 76.0,
+        "max": 88.0,
+        "mean": 52.629333333333335
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm2-fp8",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm2-fp8/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 209.216804,
+        "p50": 310.21425250000004,
+        "p95": 405.89932335,
+        "p99": 455.1221550299999,
+        "max": 526.254563,
+        "mean": 317.61618323933334,
+        "p90": 383.6626392
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.106971,
+        "p50": 18.611497,
+        "p95": 24.318873449999995,
+        "p99": 26.55976753,
+        "max": 30.766664,
+        "mean": 18.938762390333334,
+        "p90": 22.950014699999997
+      },
+      "completed_rps": 49.71520389663091,
+      "dispatch_rps": 50.00056826337737,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 77.0,
+        "max": 92.0,
+        "mean": 52.902
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 1173,
+          "fraction_of_all_offered": 0.391,
+          "goodput_rps": 19.438644723582687,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm2-mxfp4",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm2-mxfp4/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 179.095478,
+        "p50": 273.32770500000004,
+        "p95": 362.8157718499998,
+        "p99": 446.84899631999997,
+        "max": 608.349809,
+        "mean": 281.5059573506667,
+        "p90": 340.467826
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.259004,
+        "p50": 18.8006815,
+        "p95": 26.805336649999994,
+        "p99": 32.064766659999954,
+        "max": 40.475046,
+        "mean": 19.642673305,
+        "p90": 24.486730299999998
+      },
+      "completed_rps": 49.75691523849948,
+      "dispatch_rps": 50.00045250076066,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 81.0,
+        "max": 123.0,
+        "mean": 52.583
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 2158,
+          "fraction_of_all_offered": 0.7193333333333334,
+          "goodput_rps": 35.79180769489396,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm2-mxfp4-ngram",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm2-mxfp4-ngram/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 191.337941,
+        "p50": 327.1772325,
+        "p95": 468.4265295,
+        "p99": 588.4497290299995,
+        "max": 856.856794,
+        "mean": 341.04453178866663,
+        "p90": 430.0069643
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 12.666951,
+        "p50": 18.409464,
+        "p95": 26.861494049999997,
+        "p99": 32.59216219999999,
+        "max": 40.477371,
+        "mean": 19.04850512533333,
+        "p90": 24.179156799999998
+      },
+      "completed_rps": 49.80935043342303,
+      "dispatch_rps": 50.00047914430478,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 82.0,
+        "max": 123.0,
+        "mean": 52.516666666666666
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 844,
+          "fraction_of_all_offered": 0.2813333333333333,
+          "goodput_rps": 14.01303058860301,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "screening",
+      "run": "screen-vllm2-tuned",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-vllm2-tuned/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 305.909401,
+        "p50": 437.8887315,
+        "p95": 571.21561385,
+        "p99": 641.6276498799999,
+        "max": 748.881247,
+        "mean": 448.94978367833335,
+        "p90": 538.6387518
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 17.620841,
+        "p50": 24.594859,
+        "p95": 31.571297049999988,
+        "p99": 36.44982320999999,
+        "max": 42.31219,
+        "mean": 25.040096694,
+        "p90": 29.289720299999995
+      },
+      "completed_rps": 49.558017191235265,
+      "dispatch_rps": 50.000397272246175,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 88.0,
+        "mean": 52.67766666666667
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "threshold_ms": 150,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "threshold_ms": 300,
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-mx2",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-mx2/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 172.596907,
+        "p50": 272.3424065,
+        "p95": 360.32776389999987,
+        "p99": 440.64784530000003,
+        "max": 595.341996,
+        "mean": 280.042874365,
+        "p90": 338.61450629999996
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.695053,
+        "p50": 19.349598,
+        "p95": 27.363495099999994,
+        "p99": 32.85685802,
+        "max": 38.169788,
+        "mean": 20.174564785,
+        "p90": 24.980995399999994
+      },
+      "completed_rps": 49.75775964471253,
+      "dispatch_rps": 50.000351849758374,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 80.0,
+        "max": 111.0,
+        "mean": 52.56166666666667
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 2196,
+          "fraction_of_all_offered": 0.732,
+          "goodput_rps": 36.42268005992957,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-r5",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-r5/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 220.923523,
+        "p50": 308.1105695,
+        "p95": 404.26833464999993,
+        "p99": 450.53355847999984,
+        "max": 527.637303,
+        "mean": 316.20055226200003,
+        "p90": 381.9772089
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.658595,
+        "p50": 19.064143,
+        "p95": 24.846182049999996,
+        "p99": 27.55495323999999,
+        "max": 38.534397,
+        "mean": 19.45987600833333,
+        "p90": 23.2895889
+      },
+      "completed_rps": 49.71411277936957,
+      "dispatch_rps": 50.00038444110192,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 90.0,
+        "mean": 52.873666666666665
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1223,
+          "fraction_of_all_offered": 0.4076666666666667,
+          "goodput_rps": 20.266786643056328,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-r2",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-r2/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 223.166711,
+        "p50": 309.01591199999996,
+        "p95": 402.3468009,
+        "p99": 449.78300722999995,
+        "max": 524.636566,
+        "mean": 316.56158288299997,
+        "p90": 380.3834564
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.628871,
+        "p50": 19.083063499999998,
+        "p95": 25.038256099999998,
+        "p99": 27.703492909999976,
+        "max": 33.241287,
+        "mean": 19.47013423333333,
+        "p90": 23.473617199999996
+      },
+      "completed_rps": 49.70937090867561,
+      "dispatch_rps": 50.00044795416328,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 85.0,
+        "mean": 52.86033333333334
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1182,
+          "fraction_of_all_offered": 0.394,
+          "goodput_rps": 19.58549213801819,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-bf2",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-bf2/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 307.457271,
+        "p50": 437.32813550000003,
+        "p95": 571.7555016499999,
+        "p99": 639.8528348199991,
+        "max": 713.977687,
+        "mean": 448.57338057833334,
+        "p90": 538.4870000000001
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 18.372063999999998,
+        "p50": 25.328653499999998,
+        "p95": 32.56084429999999,
+        "p99": 37.440406889999984,
+        "max": 43.681470999999995,
+        "mean": 25.741281457666666,
+        "p90": 29.844091399999996
+      },
+      "completed_rps": 49.55888312625718,
+      "dispatch_rps": 50.000505654496806,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 76.0,
+        "max": 88.0,
+        "mean": 52.666
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-r3",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-r3/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 204.313089,
+        "p50": 308.401212,
+        "p95": 403.8272906499997,
+        "p99": 449.38476124999994,
+        "max": 516.424669,
+        "mean": 315.787947092,
+        "p90": 378.86487289999997
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.640461,
+        "p50": 19.0734195,
+        "p95": 24.806110049999987,
+        "p99": 27.744817789999992,
+        "max": 34.33142,
+        "mean": 19.404199662333333,
+        "p90": 23.2277949
+      },
+      "completed_rps": 49.70950562337022,
+      "dispatch_rps": 50.000460656128006,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 90.0,
+        "mean": 52.785666666666664
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1197,
+          "fraction_of_all_offered": 0.399,
+          "goodput_rps": 19.834092743724717,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-r4",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-r4/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 205.257986,
+        "p50": 307.970728,
+        "p95": 400.1780849999999,
+        "p99": 454.9741162299998,
+        "max": 523.788237,
+        "mean": 315.2045090283333,
+        "p90": 378.436933
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.684707,
+        "p50": 19.0950565,
+        "p95": 24.853497099999995,
+        "p99": 27.617417549999992,
+        "max": 38.909003999999996,
+        "mean": 19.420607402666665,
+        "p90": 23.061716899999997
+      },
+      "completed_rps": 49.778613720554176,
+      "dispatch_rps": 50.00037914508907,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 76.0,
+        "max": 85.0,
+        "mean": 52.696333333333335
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1234,
+          "fraction_of_all_offered": 0.41133333333333333,
+          "goodput_rps": 20.47560311038795,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-cgb",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-cgb/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 207.346275,
+        "p50": 307.456331,
+        "p95": 403.4673600499998,
+        "p99": 450.55785203999983,
+        "max": 509.773105,
+        "mean": 315.2176533393333,
+        "p90": 379.24501489999994
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.446494,
+        "p50": 19.030835,
+        "p95": 24.92034224999999,
+        "p99": 27.60841660999997,
+        "max": 53.852737,
+        "mean": 19.362820457999998,
+        "p90": 23.306146799999997
+      },
+      "completed_rps": 49.715858194181564,
+      "dispatch_rps": 50.000418013664735,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 67.0,
+        "p99": 75.00999999999976,
+        "max": 85.0,
+        "mean": 52.852
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1245,
+          "fraction_of_all_offered": 0.415,
+          "goodput_rps": 20.63208115058535,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-c2",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-c2/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 206.335004,
+        "p50": 304.792817,
+        "p95": 397.94223774999983,
+        "p99": 444.2037847299998,
+        "max": 543.961006,
+        "mean": 311.536259477,
+        "p90": 379.12521139999996
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 17.777711,
+        "p50": 21.455087999999996,
+        "p95": 28.202754199999998,
+        "p99": 30.136781109999994,
+        "max": 37.126947,
+        "mean": 22.089889073999995,
+        "p90": 26.978772999999997
+      },
+      "completed_rps": 49.78886035582444,
+      "dispatch_rps": 50.000407365773064,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 34.0,
+        "p50": 51.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 93.0,
+        "mean": 52.567
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1269,
+          "fraction_of_all_offered": 0.423,
+          "goodput_rps": 21.060687930513737,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-ref",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-ref/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 211.923459,
+        "p50": 307.92134599999997,
+        "p95": 398.98814445000005,
+        "p99": 447.17232444999973,
+        "max": 527.659359,
+        "mean": 314.831786885,
+        "p90": 377.4491699
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.530892,
+        "p50": 19.0828565,
+        "p95": 24.948052049999994,
+        "p99": 27.750693959999992,
+        "max": 35.909351,
+        "mean": 19.439672603333335,
+        "p90": 23.3784734
+      },
+      "completed_rps": 49.71511059796877,
+      "dispatch_rps": 50.00031180754633,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 86.0,
+        "mean": 52.64966666666667
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1240,
+          "fraction_of_all_offered": 0.41333333333333333,
+          "goodput_rps": 20.548912380493757,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-mx1",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-mx1/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 178.697591,
+        "p50": 272.0258205,
+        "p95": 361.71185325,
+        "p99": 445.5267417299992,
+        "max": 601.369698,
+        "mean": 280.25536507666664,
+        "p90": 339.1619515
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.71044,
+        "p50": 19.2920785,
+        "p95": 27.630256799999987,
+        "p99": 32.51864938999999,
+        "max": 38.606819,
+        "mean": 20.16521583733333,
+        "p90": 24.989251799999998
+      },
+      "completed_rps": 49.820996082247554,
+      "dispatch_rps": 50.00043522219447,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 81.0,
+        "max": 123.0,
+        "mean": 52.535333333333334
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 2165,
+          "fraction_of_all_offered": 0.7216666666666667,
+          "goodput_rps": 35.95415217268865,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-bf1",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-bf1/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 305.16048,
+        "p50": 437.463442,
+        "p95": 569.90681385,
+        "p99": 641.7144303099993,
+        "max": 736.678484,
+        "mean": 448.35372069466666,
+        "p90": 537.0308223000001
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 18.243351,
+        "p50": 25.470326999999997,
+        "p95": 32.368996149999994,
+        "p99": 36.958192239999995,
+        "max": 48.875516,
+        "mean": 25.739678281666663,
+        "p90": 29.8400151
+      },
+      "completed_rps": 49.55520561069747,
+      "dispatch_rps": 50.00039881111696,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 76.0,
+        "max": 88.0,
+        "mean": 52.632666666666665
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-r6",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-r6/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 217.456205,
+        "p50": 309.531929,
+        "p95": 406.75161469999995,
+        "p99": 456.39667182,
+        "max": 518.499893,
+        "mean": 316.957688077,
+        "p90": 381.1453979
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.447728,
+        "p50": 19.103513,
+        "p95": 24.876574649999995,
+        "p99": 27.93435645999999,
+        "max": 45.768924999999996,
+        "mean": 19.515985160333333,
+        "p90": 23.359821
+      },
+      "completed_rps": 49.70886685586524,
+      "dispatch_rps": 50.00069213695673,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 76.0,
+        "max": 90.0,
+        "mean": 52.951
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1181,
+          "fraction_of_all_offered": 0.39366666666666666,
+          "goodput_rps": 19.568723918925617,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-prof",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "profile-distorted",
+      "source": "results/screen-rvm-vllm2-fp8-prof/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 220.29686,
+        "p50": 336.9930445,
+        "p95": 37704.3619193,
+        "p99": 41621.89565749998,
+        "max": 42603.570695,
+        "mean": 8557.615615938,
+        "p90": 32621.815069899993
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.938457999999999,
+        "p50": 20.5906565,
+        "p95": 36523.77998454998,
+        "p99": 40531.437543869986,
+        "max": 41670.552413,
+        "mean": 7989.675681758667,
+        "p90": 31553.181944999997
+      },
+      "completed_rps": 41.283628533996655,
+      "dispatch_rps": 50.00046988020763,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 75.00999999999976,
+        "max": 90.0,
+        "mean": 52.929
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 777,
+          "fraction_of_all_offered": 0.259,
+          "goodput_rps": 10.692459790305133,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-r7",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-r7/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 204.069039,
+        "p50": 308.9311345,
+        "p95": 403.01694839999993,
+        "p99": 448.0564689599999,
+        "max": 503.632424,
+        "mean": 316.227652837,
+        "p90": 379.3805619
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.688130999999998,
+        "p50": 19.048659,
+        "p95": 24.82596165,
+        "p99": 27.555906269999998,
+        "max": 33.317912,
+        "mean": 19.462974633,
+        "p90": 23.438989499999998
+      },
+      "completed_rps": 49.707943893509984,
+      "dispatch_rps": 50.00040460314067,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 52.0,
+        "p95": 68.0,
+        "p99": 75.0,
+        "max": 89.0,
+        "mean": 52.90866666666667
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1210,
+          "fraction_of_all_offered": 0.4033333333333333,
+          "goodput_rps": 20.048870703715696,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-c1",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-c1/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 219.257215,
+        "p50": 308.3141785,
+        "p95": 400.63280684999995,
+        "p99": 445.71565488999994,
+        "max": 557.260382,
+        "mean": 315.3133275133333,
+        "p90": 380.7540286
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 17.650983999999998,
+        "p50": 21.7967855,
+        "p95": 28.665826999999993,
+        "p99": 30.45461613999999,
+        "max": 41.980922,
+        "mean": 22.487710109,
+        "p90": 27.5273434
+      },
+      "completed_rps": 49.78899440353206,
+      "dispatch_rps": 50.00054487589438,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 37.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 95.0,
+        "mean": 52.62433333333333
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1127,
+          "fraction_of_all_offered": 0.37566666666666665,
+          "goodput_rps": 18.704065564260212,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "gemma3-text",
+      "series": "replacement-vm",
+      "run": "screen-rvm-vllm2-fp8-cga",
+      "gpus": 2,
+      "vllm": "0.28.0",
+      "status": "measured",
+      "source": "results/screen-rvm-vllm2-fp8-cga/measured-summary.json",
+      "requests": 3000,
+      "offered_rps": 50,
+      "latency_ms": {
+        "count": 3000,
+        "min": 206.765536,
+        "p50": 307.799044,
+        "p95": 399.7368552,
+        "p99": 449.5193006499999,
+        "max": 522.109781,
+        "mean": 315.2464090953333,
+        "p90": 379.4316449
+      },
+      "ttft_ms": {
+        "count": 3000,
+        "min": 14.411828,
+        "p50": 19.109976,
+        "p95": 24.808432599999996,
+        "p99": 27.361629189999995,
+        "max": 43.728159,
+        "mean": 19.431051277999998,
+        "p90": 23.3219329
+      },
+      "completed_rps": 49.70905705961993,
+      "dispatch_rps": 50.00041736510438,
+      "http_failures": 0,
+      "truncations": 0,
+      "output_tokens": {
+        "count": 3000,
+        "min": 35.0,
+        "p50": 51.0,
+        "p95": 67.0,
+        "p99": 75.0,
+        "max": 92.0,
+        "mean": 52.818
+      },
+      "input_tokens": {
+        "count": 3000,
+        "min": 612.0,
+        "p50": 706.0,
+        "p95": 1003.0,
+        "p99": 1226.0,
+        "max": 1547.0,
+        "mean": 739.1296666666667
+      },
+      "sla_attainment": {
+        "150": {
+          "successful_complete_within_threshold": 0,
+          "fraction_of_all_offered": 0.0,
+          "goodput_rps": 0.0,
+          "threshold_ms": 150,
+          "required_fraction_for_p95": 0.95
+        },
+        "300": {
+          "successful_complete_within_threshold": 1233,
+          "fraction_of_all_offered": 0.411,
+          "goodput_rps": 20.43042245150379,
+          "threshold_ms": 300,
+          "required_fraction_for_p95": 0.95
+        }
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "legacy-v0.28",
+      "run": "genedit100_c1",
+      "vllm": "0.28.0",
+      "gpus": 1,
+      "concurrency": 1,
+      "source": "experiments/genedit-vlm-20261028T195800Z/runs/genedit100_c1/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 3.1297333853424063,
+        "p50": 2.866642498993315,
+        "p90": 4.7356908671790725,
+        "p95": 5.23488972149207,
+        "p99": 7.533156676558431,
+        "min": 1.3325520469807088,
+        "max": 7.998878373007756
+      },
+      "ttft_s": {
+        "mean": 0.582316426212783,
+        "p50": 0.47624522549449466,
+        "p90": 0.721770264575025,
+        "p95": 1.432761105702956,
+        "p99": 2.2892344839510046,
+        "min": 0.31982029997743666,
+        "max": 2.326186127960682
+      },
+      "tpot_s": {
+        "mean": 0.003946416155650081,
+        "p50": 0.003929969597540736,
+        "p90": 0.0041280793462721305,
+        "p95": 0.0042007519223114425,
+        "p99": 0.004368913906768252,
+        "min": 0.0036411754282418742,
+        "max": 0.004786785293888781
+      },
+      "completed_rps": 0.30745496866741595,
+      "output_tokens": {
+        "mean": 645.34,
+        "p50": 588.5,
+        "p90": 893.2999999999997,
+        "p95": 1149.6000000000001,
+        "p99": 1839.5200000000002,
+        "min": 231,
+        "max": 1891
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_i_c1",
+      "vllm": "0.31.0",
+      "gpus": 1,
+      "concurrency": 1,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_i_c1/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 2.9935429092508277,
+        "p50": 2.7656840264971834,
+        "p90": 4.42074983753846,
+        "p95": 4.733131886276532,
+        "p99": 7.409143703890737,
+        "min": 1.242109149985481,
+        "max": 8.485348635993432
+      },
+      "ttft_s": {
+        "mean": 0.503894661932718,
+        "p50": 0.4215337935311254,
+        "p90": 0.6252648694091476,
+        "p95": 1.2035440201638257,
+        "p99": 1.779478719166947,
+        "min": 0.2829069410217926,
+        "max": 2.0633304420043714
+      },
+      "tpot_s": {
+        "mean": 0.003912042527479256,
+        "p50": 0.0038943975789958478,
+        "p90": 0.004099263844023471,
+        "p95": 0.004153779114355979,
+        "p99": 0.004300231715669982,
+        "min": 0.0036364099599749725,
+        "max": 0.00547154282792097
+      },
+      "completed_rps": 0.3207585107222322,
+      "output_tokens": {
+        "mean": 636.79,
+        "p50": 597.5,
+        "p90": 885.9999999999999,
+        "p95": 1074.3,
+        "p99": 1846.1700000000012,
+        "min": 178,
+        "max": 2061
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_i_c16",
+      "vllm": "0.31.0",
+      "gpus": 1,
+      "concurrency": 16,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_i_c16/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 7.392591651857947,
+        "p50": 6.861722740490222,
+        "p90": 10.10016875071451,
+        "p95": 11.758207564108305,
+        "p99": 18.07324155132815,
+        "min": 2.6967133280122653,
+        "max": 27.073540173994843
+      },
+      "ttft_s": {
+        "mean": 1.1087365174700972,
+        "p50": 0.8183277040079702,
+        "p90": 2.528290178294992,
+        "p95": 2.7112327931885374,
+        "p99": 3.2623401864833435,
+        "min": 0.3808979209861718,
+        "max": 3.3682745859841816
+      },
+      "tpot_s": {
+        "mean": 0.009899631768039114,
+        "p50": 0.010087453016585667,
+        "p90": 0.011370353676541949,
+        "p95": 0.012050011997260902,
+        "p99": 0.013629848695299865,
+        "min": 0.005543264107044211,
+        "max": 0.01381794054698943
+      },
+      "completed_rps": 1.9647164376743431,
+      "output_tokens": {
+        "mean": 633.96,
+        "p50": 614.0,
+        "p90": 866.8999999999999,
+        "p95": 996.2999999999998,
+        "p99": 1582.2200000000053,
+        "min": 228,
+        "max": 2594
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_i_c32",
+      "vllm": "0.31.0",
+      "gpus": 1,
+      "concurrency": 32,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_i_c32/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 11.556141765311477,
+        "p50": 10.662001105520176,
+        "p90": 17.50391787029803,
+        "p95": 19.59343929104798,
+        "p99": 25.163094220392562,
+        "min": 4.127208169025835,
+        "max": 32.75169799802825
+      },
+      "ttft_s": {
+        "mean": 3.027157277262304,
+        "p50": 1.6598906189901754,
+        "p90": 8.015810741891618,
+        "p95": 8.939134858798933,
+        "p99": 9.317104816352366,
+        "min": 0.4568250349839218,
+        "max": 9.342022854019888
+      },
+      "tpot_s": {
+        "mean": 0.013702774533104705,
+        "p50": 0.014330045080275505,
+        "p90": 0.017037700804059603,
+        "p95": 0.018720171051438566,
+        "p99": 0.02188112465027768,
+        "min": 0.006460447443134178,
+        "max": 0.023831940481719306
+      },
+      "completed_rps": 2.450724377880152,
+      "output_tokens": {
+        "mean": 627.96,
+        "p50": 607.5,
+        "p90": 860.3,
+        "p95": 995.4499999999999,
+        "p99": 1715.3100000000013,
+        "min": 151,
+        "max": 1944
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_i_c4",
+      "vllm": "0.31.0",
+      "gpus": 1,
+      "concurrency": 4,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_i_c4/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 4.369633963619708,
+        "p50": 4.1180931629787665,
+        "p90": 6.1605151827970985,
+        "p95": 6.742617374996188,
+        "p99": 10.363834645893089,
+        "min": 1.4785362299880944,
+        "max": 13.036393389978912
+      },
+      "ttft_s": {
+        "mean": 0.6412279744574334,
+        "p50": 0.5405478839820717,
+        "p90": 0.8792420523823237,
+        "p95": 1.2994848871981945,
+        "p99": 2.217682863128721,
+        "min": 0.33969825599342585,
+        "max": 2.252619186998345
+      },
+      "tpot_s": {
+        "mean": 0.0059113857836318095,
+        "p50": 0.005839075908111812,
+        "p90": 0.0064255022118257675,
+        "p95": 0.006621753294013491,
+        "p99": 0.0070838750327855676,
+        "min": 0.0044629864388770315,
+        "max": 0.008217324302594616
+      },
+      "completed_rps": 0.9007855049144382,
+      "output_tokens": {
+        "mean": 630.71,
+        "p50": 587.5,
+        "p90": 915.5999999999998,
+        "p95": 1018.0999999999999,
+        "p99": 1720.8900000000021,
+        "min": 151,
+        "max": 2106
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_i_c8",
+      "vllm": "0.31.0",
+      "gpus": 1,
+      "concurrency": 8,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_i_c8/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 5.535535756926984,
+        "p50": 5.170386103971396,
+        "p90": 7.929608936299337,
+        "p95": 8.744068027558386,
+        "p99": 14.686721091609805,
+        "min": 2.361956248001661,
+        "max": 16.220596956962254
+      },
+      "ttft_s": {
+        "mean": 0.827958953154739,
+        "p50": 0.6770297384937294,
+        "p90": 1.2747341152920852,
+        "p95": 1.8278701600123894,
+        "p99": 3.25424267792434,
+        "min": 0.3668409939855337,
+        "max": 3.2671384119894356
+      },
+      "tpot_s": {
+        "mean": 0.007352252747263727,
+        "p50": 0.007402004985771744,
+        "p90": 0.008378418098082726,
+        "p95": 0.008590493551732527,
+        "p99": 0.009082091846231021,
+        "min": 0.0048768217296379255,
+        "max": 0.009268498292592332
+      },
+      "completed_rps": 1.3918959226156382,
+      "output_tokens": {
+        "mean": 639.16,
+        "p50": 593.5,
+        "p90": 899.5999999999998,
+        "p95": 1026.8,
+        "p99": 1922.2400000000007,
+        "min": 228,
+        "max": 2045
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_two_c16",
+      "vllm": "0.31.0",
+      "gpus": 2,
+      "concurrency": 16,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_two_c16/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 5.683106484021992,
+        "p50": 5.162123532994883,
+        "p90": 8.204014594701585,
+        "p95": 9.80947998817719,
+        "p99": 14.897440653251278,
+        "min": 2.1624015200068243,
+        "max": 19.916709492972586
+      },
+      "ttft_s": {
+        "mean": 0.8427159074571682,
+        "p50": 0.6838969789969269,
+        "p90": 1.6725725414638872,
+        "p95": 1.8665732199762715,
+        "p99": 2.4268885837664143,
+        "min": 0.35760392900556326,
+        "max": 2.711069644021336
+      },
+      "tpot_s": {
+        "mean": 0.007490087720735279,
+        "p50": 0.007573005717588073,
+        "p90": 0.008688439830308725,
+        "p95": 0.008829595915032172,
+        "p99": 0.009187523531816774,
+        "min": 0.004308407667506832,
+        "max": 0.01057209090016498
+      },
+      "completed_rps": 2.538261718722224,
+      "output_tokens": {
+        "mean": 643.13,
+        "p50": 593.5,
+        "p90": 878.0999999999997,
+        "p95": 1140.4499999999996,
+        "p99": 1802.490000000003,
+        "min": 228,
+        "max": 2346
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    },
+    {
+      "workload": "genedit-vlm",
+      "series": "overnight-v0.31",
+      "run": "native_two_c32",
+      "vllm": "0.31.0",
+      "gpus": 2,
+      "concurrency": 32,
+      "source": "experiments/overnight-20261029T044448Z/vlm-v31/runs/native_two_c32/summary.json",
+      "status": "measured",
+      "requests": 100,
+      "http_failures": 0,
+      "parse_errors": 0,
+      "truncations": 0,
+      "schema_valid": 100,
+      "latency_s": {
+        "mean": 7.580079963481403,
+        "p50": 7.302407497016247,
+        "p90": 10.194119436194887,
+        "p95": 12.05752578845713,
+        "p99": 18.937915083761332,
+        "min": 2.0534889539703727,
+        "max": 19.970819577982184
+      },
+      "ttft_s": {
+        "mean": 1.5757570245495298,
+        "p50": 0.9072514690051321,
+        "p90": 3.7237291169003583,
+        "p95": 3.994376395191648,
+        "p99": 4.192300341958762,
+        "min": 0.34056134399725124,
+        "max": 4.2399718089727685
+      },
+      "tpot_s": {
+        "mean": 0.009518967388811729,
+        "p50": 0.009742013441719797,
+        "p90": 0.011325046230341407,
+        "p95": 0.011991591447197891,
+        "p99": 0.013579515264626474,
+        "min": 0.0051835359557151585,
+        "max": 0.015812550468285832
+      },
+      "completed_rps": 3.4322317240851983,
+      "output_tokens": {
+        "mean": 636.49,
+        "p50": 603.5,
+        "p90": 917.0999999999999,
+        "p95": 955.9499999999996,
+        "p99": 1732.7500000000018,
+        "min": 169,
+        "max": 2104
+      },
+      "input_tokens": {
+        "mean": 2171.48,
+        "p50": 2171.0,
+        "p90": 2190.0,
+        "p95": 2194.1,
+        "p99": 2201.09,
+        "min": 2150,
+        "max": 2210
+      }
+    }
+  ]
+}
