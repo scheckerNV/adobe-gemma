@@ -1,0 +1,1220 @@
+{
+  "study_date": "2026-10-29",
+  "scope": "Aggregate text-only inference measurements. No prompts, outputs, images, request IDs, hostnames, internal addresses, credentials or original decks.",
+  "source_summary_sha256": "5a37e4ba9c852400bb2dbe158cf05656240935127fd6589fb51f74358fdeeab3",
+  "model": "Qwen/Qwen2.5-72B-Instruct",
+  "precision": "BF16",
+  "model_revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+  "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+  "max_model_len": 2560,
+  "dataset_rows": 25648,
+  "dataset_sha256": "f0fa5f2d47b3c2b639f4b65ccbf9fe56c5d27d7318498d5c55554f28d07cc7dc",
+  "hardware": {
+    "gpu_model": "NVIDIA A100-SXM4-40GB",
+    "gpu_count": 8,
+    "memory_mib_per_gpu": 40960,
+    "driver": "580.178.04",
+    "interconnect": "NV12 between all GPU pairs",
+    "numa_domains": 2
+  },
+  "runtime": {
+    "image": "nvcr.io/nvidia/ai-dynamo/vllm-runtime@sha256:e01aaacd4d8aa571ad960f541eafc1402f4b94a1abcdd8e2745e7e3408c84ae0",
+    "cuda": "13.0",
+    "nccl": [
+      2,
+      29,
+      7
+    ],
+    "versions": {
+      "torch": "2.13.0+cu130",
+      "vllm": "0.31.0",
+      "transformers": "5.14.1",
+      "aiperf": "not-discovered"
+    }
+  },
+  "accounting": {
+    "report_wall_clock_seconds": 14090.060499,
+    "dedicated_instance_gpu_hours": 31.311245553333332,
+    "allocated_gpu_hours": 30.24287446777777,
+    "screen_and_full_measurement_gpu_hours": 23.17886137453334,
+    "agent_reported_completion_including_backup_hours": 4.01,
+    "actual_instance_price": null,
+    "note": "Report wall clock precedes final backup verification. Dedicated instance GPU-hours include idle time; allocated GPU-hours follow Kubernetes reservations. No dollar-cost savings established."
+  },
+  "runs": [
+    {
+      "run": "experiments/20261029T170701Z/revised-scope/native-full/full",
+      "phase": "full",
+      "status": "valid",
+      "requests_expected": 25648,
+      "attempted": 25648,
+      "successful": 25648,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 38,
+      "untruncated": false,
+      "application_format_valid": 25617,
+      "duration_s": 2673.3470159280005,
+      "requests_per_s": 9.593965858972782,
+      "output_tokens_per_s": 463.13553482700786,
+      "output_tokens_per_s_per_gpu": 57.89194185337598,
+      "output_tokens": 1238122,
+      "latency_s": {
+        "mean": 2.0802208903664203,
+        "p50": 2.0394477419995383,
+        "p90": 2.417280040600781,
+        "p95": 2.5587136902498058,
+        "p99": 2.9602675252507464,
+        "min": 1.2791521189992636,
+        "max": 8.736992985999677
+      },
+      "ttft_s": {
+        "mean": 0.13579215457384408,
+        "p50": 0.12368942800003424,
+        "p90": 0.18226931079989298,
+        "p95": 0.20410795964935455,
+        "p99": 0.2569573599799696,
+        "min": 0.06777819200033264,
+        "max": 0.45497370500015677
+      },
+      "estimated_tpot_s": {
+        "mean": 0.040223046836672494,
+        "p50": 0.04005097969871993,
+        "p90": 0.042368386058854714,
+        "p95": 0.04326041746780202,
+        "p99": 0.04509718424550967,
+        "min": 0.03417953921622963,
+        "max": 0.05590203421950985
+      },
+      "input_tokens": {
+        "mean": 740.677050842171,
+        "p50": 705.0,
+        "p90": 893.0,
+        "p95": 1002.0,
+        "p99": 1229.0,
+        "min": 608,
+        "max": 2136
+      },
+      "output_token_distribution": {
+        "mean": 48.27362757330006,
+        "p50": 47.0,
+        "p90": 56.0,
+        "p95": 59.0,
+        "p99": 68.0,
+        "min": 31,
+        "max": 200
+      },
+      "peak_gpu_memory_mib": 39467.0,
+      "gpu_utilization_pct": {
+        "mean": 99.91813248502994,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 0.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 25611,
+        "length": 37
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "native",
+      "series_id": "adobe-deck1-original-c20-bf16-pc-on-20261029",
+      "traffic_order": "original",
+      "prefix_caching": true,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.0802208903664203,
+        "p50": 2.0394477419995383,
+        "p90": 2.417280040600781,
+        "p95": 2.5587136902498058,
+        "p99": 2.9602675252507464,
+        "min": 1.2791521189992636,
+        "max": 8.736992985999677
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "native_lb_observed_envelope_s": {
+        "mean": 0.0009260061064354363,
+        "p50": 0.0007910949998404249,
+        "p90": 0.001258963601503637,
+        "p95": 0.001833431649447447,
+        "p99": 0.002578453629739668,
+        "min": 0.0005472630000440404,
+        "max": 0.01241915199898358
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 31,
+      "prefix_cache_workers": [
+        {
+          "worker": 0,
+          "role": "native",
+          "queried_tokens": 9490135.0,
+          "hit_tokens": 7471728.0,
+          "token_hit_fraction": 0.7873152489400835
+        },
+        {
+          "worker": 1,
+          "role": "native",
+          "queried_tokens": 9506750.0,
+          "hit_tokens": 7454976.0,
+          "token_hit_fraction": 0.7841771372971836
+        }
+      ],
+      "worker_gpu_metrics": {
+        "native-0": {
+          "utilization_pct": {
+            "mean": 99.84038173652695,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 0.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39467.0
+        },
+        "native-1": {
+          "utilization_pct": {
+            "mean": 99.99588323353294,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 93.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39467.0
+        }
+      }
+    },
+    {
+      "run": "experiments/20261029T170701Z/revised-scope/disagg-full/full",
+      "phase": "full",
+      "status": "valid",
+      "requests_expected": 25648,
+      "attempted": 25648,
+      "successful": 25648,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 35,
+      "untruncated": false,
+      "application_format_valid": 25621,
+      "duration_s": 3428.734138967,
+      "requests_per_s": 7.480311672029247,
+      "output_tokens_per_s": 361.47072061218466,
+      "output_tokens_per_s_per_gpu": 45.18384007652308,
+      "output_tokens": 1239387,
+      "latency_s": {
+        "mean": 2.669154504965408,
+        "p50": 2.47376838800119,
+        "p90": 3.6164944023992573,
+        "p95": 3.9674696721496723,
+        "p99": 4.777758589099644,
+        "min": 1.4773576190000313,
+        "max": 10.959472131999064
+      },
+      "ttft_s": {
+        "mean": 0.8679993290261938,
+        "p50": 0.6402485809985592,
+        "p90": 1.7359518324999952,
+        "p95": 2.0522756840994587,
+        "p99": 2.7245978253498055,
+        "min": 0.12083423600051901,
+        "max": 4.878288339999926
+      },
+      "estimated_tpot_s": {
+        "mean": 0.03722355388512802,
+        "p50": 0.03740524541345198,
+        "p90": 0.03801839836005869,
+        "p95": 0.038116431298950565,
+        "p99": 0.03828164000048735,
+        "min": 0.032073025809517104,
+        "max": 0.041373595926815165
+      },
+      "input_tokens": {
+        "mean": 740.677050842171,
+        "p50": 705.0,
+        "p90": 893.0,
+        "p95": 1002.0,
+        "p99": 1229.0,
+        "min": 608,
+        "max": 2136
+      },
+      "output_token_distribution": {
+        "mean": 48.32294915782907,
+        "p50": 47.0,
+        "p90": 56.0,
+        "p95": 59.0,
+        "p99": 68.0,
+        "min": 31,
+        "max": 200
+      },
+      "peak_gpu_memory_mib": 39467.0,
+      "gpu_utilization_pct": {
+        "mean": 71.52284004670169,
+        "p50": 97.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 0.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 25613,
+        "length": 35
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "disagg",
+      "series_id": "adobe-deck1-original-c20-bf16-pc-on-20261029",
+      "traffic_order": "original",
+      "prefix_caching": true,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.669154504965408,
+        "p50": 2.47376838800119,
+        "p90": 3.6164944023992573,
+        "p95": 3.9674696721496723,
+        "p99": 4.777758589099644,
+        "min": 1.4773576190000313,
+        "max": 10.959472131999064
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 27,
+      "prefix_cache_workers": [
+        {
+          "worker": 0,
+          "role": "prefill",
+          "queried_tokens": 18996885.0,
+          "hit_tokens": 15027024.0,
+          "token_hit_fraction": 0.7910256865796682
+        },
+        {
+          "worker": 1,
+          "role": "backend",
+          "queried_tokens": 18996885.0,
+          "hit_tokens": 14834544.0,
+          "token_hit_fraction": 0.7808934991184081
+        }
+      ],
+      "worker_gpu_metrics": {
+        "prefill-0": {
+          "utilization_pct": {
+            "mean": 43.49941622883829,
+            "p50": 39.0,
+            "p90": 90.0,
+            "p95": 94.44999999999982,
+            "p99": 100.0,
+            "min": 0.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39467.0
+        },
+        "decode-1": {
+          "utilization_pct": {
+            "mean": 99.54626386456509,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 9.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 38945.0
+        }
+      }
+    },
+    {
+      "run": "experiments/20261029T170701Z/revised-scope/native-screen/screen",
+      "phase": "screen",
+      "status": "valid",
+      "requests_expected": 1000,
+      "attempted": 1000,
+      "successful": 1000,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 0,
+      "untruncated": true,
+      "application_format_valid": 1000,
+      "duration_s": 104.34118961000058,
+      "requests_per_s": 9.583942867986575,
+      "output_tokens_per_s": 461.22725052185393,
+      "output_tokens_per_s_per_gpu": 57.65340631523174,
+      "output_tokens": 48125,
+      "latency_s": {
+        "mean": 2.0714866268379954,
+        "p50": 2.042431937999936,
+        "p90": 2.3934804464000083,
+        "p95": 2.5585417208507346,
+        "p99": 2.911647309830232,
+        "min": 1.428081418000147,
+        "max": 6.259118326999669
+      },
+      "ttft_s": {
+        "mean": 0.13575195616198563,
+        "p50": 0.1238936299996567,
+        "p90": 0.17929805830053738,
+        "p95": 0.20657403525001425,
+        "p99": 0.2540956521200769,
+        "min": 0.06922229399970092,
+        "max": 0.37149723999937123
+      },
+      "estimated_tpot_s": {
+        "mean": 0.04014135098700314,
+        "p50": 0.040001725288337314,
+        "p90": 0.04246891576460331,
+        "p95": 0.043186309335988375,
+        "p99": 0.044624019681149915,
+        "min": 0.03375644479593593,
+        "max": 0.046579436907416456
+      },
+      "input_tokens": {
+        "mean": 739.139,
+        "p50": 704.0,
+        "p90": 889.5000000000001,
+        "p95": 1007.1999999999998,
+        "p99": 1216.03,
+        "min": 626,
+        "max": 1327
+      },
+      "output_token_distribution": {
+        "mean": 48.125,
+        "p50": 48.0,
+        "p90": 56.0,
+        "p95": 58.0,
+        "p99": 67.0,
+        "min": 34,
+        "max": 144
+      },
+      "peak_gpu_memory_mib": 39465.0,
+      "gpu_utilization_pct": {
+        "mean": 99.95432692307692,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 85.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 1000
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "native",
+      "series_id": "adobe-deck1-original-c20-bf16-pc-on-20261029",
+      "traffic_order": "original",
+      "prefix_caching": true,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.0714866268379954,
+        "p50": 2.042431937999936,
+        "p90": 2.3934804464000083,
+        "p95": 2.5585417208507346,
+        "p99": 2.911647309830232,
+        "min": 1.428081418000147,
+        "max": 6.259118326999669
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "native_lb_observed_envelope_s": {
+        "mean": 0.0010890113029990971,
+        "p50": 0.0007802015002198459,
+        "p90": 0.0015074219000780432,
+        "p95": 0.0018442684496676517,
+        "p99": 0.01142846623927653,
+        "min": 0.0005845340001542354,
+        "max": 0.012674393999986933
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 0,
+      "prefix_cache_workers": [
+        {
+          "worker": 0,
+          "role": "native",
+          "queried_tokens": 370258.0,
+          "hit_tokens": 291552.0,
+          "token_hit_fraction": 0.787429306051456
+        },
+        {
+          "worker": 1,
+          "role": "native",
+          "queried_tokens": 368881.0,
+          "hit_tokens": 290096.0,
+          "token_hit_fraction": 0.7864216373301959
+        }
+      ],
+      "worker_gpu_metrics": {
+        "native-0": {
+          "utilization_pct": {
+            "mean": 100.0,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 100.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39465.0
+        },
+        "native-1": {
+          "utilization_pct": {
+            "mean": 99.90865384615384,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 85.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39465.0
+        }
+      }
+    },
+    {
+      "run": "experiments/20261029T170701Z/revised-scope/dynamo-kv-screen/screen",
+      "phase": "screen",
+      "status": "valid",
+      "requests_expected": 1000,
+      "attempted": 1000,
+      "successful": 1000,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 2,
+      "untruncated": false,
+      "application_format_valid": 998,
+      "duration_s": 104.4138616550008,
+      "requests_per_s": 9.577272443999355,
+      "output_tokens_per_s": 464.05715900154473,
+      "output_tokens_per_s_per_gpu": 58.00714487519309,
+      "output_tokens": 48454,
+      "latency_s": {
+        "mean": 2.07143522556403,
+        "p50": 2.0397209544998987,
+        "p90": 2.3830239350996636,
+        "p95": 2.534170054699552,
+        "p99": 2.890266285240031,
+        "min": 1.3185569870001927,
+        "max": 8.39884977499969
+      },
+      "ttft_s": {
+        "mean": 0.13962584354701904,
+        "p50": 0.1312664364995726,
+        "p90": 0.18070894879983826,
+        "p95": 0.20757411665108513,
+        "p99": 0.2737835943192111,
+        "min": 0.05575333600063459,
+        "max": 0.3738429940003698
+      },
+      "estimated_tpot_s": {
+        "mean": 0.03980877286527847,
+        "p50": 0.039842719003530744,
+        "p90": 0.042189084003353056,
+        "p95": 0.04303324461694079,
+        "p99": 0.04412237959327606,
+        "min": 0.03407186782351346,
+        "max": 0.0457418220851244
+      },
+      "input_tokens": {
+        "mean": 739.139,
+        "p50": 704.0,
+        "p90": 889.5000000000001,
+        "p95": 1007.1999999999998,
+        "p99": 1216.03,
+        "min": 626,
+        "max": 1327
+      },
+      "output_token_distribution": {
+        "mean": 48.454,
+        "p50": 48.0,
+        "p90": 56.0,
+        "p95": 59.0,
+        "p99": 67.00999999999999,
+        "min": 34,
+        "max": 200
+      },
+      "peak_gpu_memory_mib": 39461.0,
+      "gpu_utilization_pct": {
+        "mean": 99.98798076923077,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 95.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 998,
+        "length": 2
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "dynamo-kv",
+      "series_id": "adobe-deck1-original-c20-bf16-pc-on-20261029",
+      "traffic_order": "original",
+      "prefix_caching": true,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.07143522556403,
+        "p50": 2.0397209544998987,
+        "p90": 2.3830239350996636,
+        "p95": 2.534170054699552,
+        "p99": 2.890266285240031,
+        "min": 1.3185569870001927,
+        "max": 8.39884977499969
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 2,
+      "prefix_cache_workers": [
+        {
+          "worker": 0,
+          "role": "backend",
+          "queried_tokens": 369747.0,
+          "hit_tokens": 289680.0,
+          "token_hit_fraction": 0.7834546324919472
+        },
+        {
+          "worker": 1,
+          "role": "backend",
+          "queried_tokens": 369392.0,
+          "hit_tokens": 294160.0,
+          "token_hit_fraction": 0.7963356001212804
+        }
+      ],
+      "worker_gpu_metrics": {
+        "aggregated-0": {
+          "utilization_pct": {
+            "mean": 99.97596153846153,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 95.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39461.0
+        },
+        "aggregated-1": {
+          "utilization_pct": {
+            "mean": 100.0,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 100.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39461.0
+        }
+      }
+    },
+    {
+      "run": "experiments/20261029T170701Z/revised-scope/dynamo-rr-screen/screen",
+      "phase": "screen",
+      "status": "valid",
+      "requests_expected": 1000,
+      "attempted": 1000,
+      "successful": 1000,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 0,
+      "untruncated": true,
+      "application_format_valid": 1000,
+      "duration_s": 104.46933656000056,
+      "requests_per_s": 9.572186757648867,
+      "output_tokens_per_s": 460.9869420616118,
+      "output_tokens_per_s_per_gpu": 57.62336775770147,
+      "output_tokens": 48159,
+      "latency_s": {
+        "mean": 2.0733941399919966,
+        "p50": 2.0424809715000265,
+        "p90": 2.4040546336999795,
+        "p95": 2.5527344442999946,
+        "p99": 2.9079489843902775,
+        "min": 1.422836171000199,
+        "max": 6.447525964999841
+      },
+      "ttft_s": {
+        "mean": 0.1356008062050014,
+        "p50": 0.12227307350030969,
+        "p90": 0.1785479066003063,
+        "p95": 0.20393244044998934,
+        "p99": 0.25654377555944846,
+        "min": 0.06484429000011005,
+        "max": 0.5079907440003808
+      },
+      "estimated_tpot_s": {
+        "mean": 0.04015856379031029,
+        "p50": 0.04000961339459644,
+        "p90": 0.042395855412174256,
+        "p95": 0.04331280615596315,
+        "p99": 0.04493218245119131,
+        "min": 0.033665988306132266,
+        "max": 0.04707730521051034
+      },
+      "input_tokens": {
+        "mean": 739.139,
+        "p50": 704.0,
+        "p90": 889.5000000000001,
+        "p95": 1007.1999999999998,
+        "p99": 1216.03,
+        "min": 626,
+        "max": 1327
+      },
+      "output_token_distribution": {
+        "mean": 48.159,
+        "p50": 48.0,
+        "p90": 55.0,
+        "p95": 58.0,
+        "p99": 67.00999999999999,
+        "min": 34,
+        "max": 144
+      },
+      "peak_gpu_memory_mib": 39421.0,
+      "gpu_utilization_pct": {
+        "mean": 100.0,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 1000
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "dynamo-rr",
+      "series_id": "adobe-deck1-original-c20-bf16-pc-on-20261029",
+      "traffic_order": "original",
+      "prefix_caching": true,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.0733941399919966,
+        "p50": 2.0424809715000265,
+        "p90": 2.4040546336999795,
+        "p95": 2.5527344442999946,
+        "p99": 2.9079489843902775,
+        "min": 1.422836171000199,
+        "max": 6.447525964999841
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 0,
+      "prefix_cache_workers": [
+        {
+          "worker": 0,
+          "role": "backend",
+          "queried_tokens": 370290.0,
+          "hit_tokens": 290816.0,
+          "token_hit_fraction": 0.7853736260768587
+        },
+        {
+          "worker": 1,
+          "role": "backend",
+          "queried_tokens": 368849.0,
+          "hit_tokens": 290736.0,
+          "token_hit_fraction": 0.788224991798812
+        }
+      ],
+      "worker_gpu_metrics": {
+        "aggregated-0": {
+          "utilization_pct": {
+            "mean": 100.0,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 100.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39377.0
+        },
+        "aggregated-1": {
+          "utilization_pct": {
+            "mean": 100.0,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 100.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39421.0
+        }
+      }
+    },
+    {
+      "run": "experiments/20261029T170701Z/revised-scope/disagg-screen/screen",
+      "phase": "screen",
+      "status": "valid",
+      "requests_expected": 1000,
+      "attempted": 1000,
+      "successful": 1000,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 1,
+      "untruncated": false,
+      "application_format_valid": 999,
+      "duration_s": 135.5045026810003,
+      "requests_per_s": 7.379828568163252,
+      "output_tokens_per_s": 355.36088504276506,
+      "output_tokens_per_s_per_gpu": 44.42011063034563,
+      "output_tokens": 48153,
+      "latency_s": {
+        "mean": 2.690217082027015,
+        "p50": 2.535696474499673,
+        "p90": 3.6359711375002917,
+        "p95": 3.901459235200218,
+        "p99": 4.432513324449937,
+        "min": 1.6309080450000693,
+        "max": 9.033980365000389
+      },
+      "ttft_s": {
+        "mean": 0.8951329839230084,
+        "p50": 0.7201027669998439,
+        "p90": 1.7534898354003416,
+        "p95": 2.0449813916499804,
+        "p99": 2.332098140980361,
+        "min": 0.12357990500004234,
+        "max": 2.8410114899998007
+      },
+      "estimated_tpot_s": {
+        "mean": 0.037230757711693645,
+        "p50": 0.03753337516236091,
+        "p90": 0.03799467511107585,
+        "p95": 0.03807583192743938,
+        "p99": 0.03817051644704901,
+        "min": 0.033397767459457495,
+        "max": 0.038826738363654426
+      },
+      "input_tokens": {
+        "mean": 739.139,
+        "p50": 704.0,
+        "p90": 889.5000000000001,
+        "p95": 1007.1999999999998,
+        "p99": 1216.03,
+        "min": 626,
+        "max": 1327
+      },
+      "output_token_distribution": {
+        "mean": 48.153,
+        "p50": 48.0,
+        "p90": 55.0,
+        "p95": 58.0,
+        "p99": 67.00999999999999,
+        "min": 34,
+        "max": 200
+      },
+      "peak_gpu_memory_mib": 39463.0,
+      "gpu_utilization_pct": {
+        "mean": 72.31066176470588,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 0.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 999,
+        "length": 1
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "disagg",
+      "series_id": "adobe-deck1-original-c20-bf16-pc-on-20261029",
+      "traffic_order": "original",
+      "prefix_caching": true,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.690217082027015,
+        "p50": 2.535696474499673,
+        "p90": 3.6359711375002917,
+        "p95": 3.901459235200218,
+        "p99": 4.432513324449937,
+        "min": 1.6309080450000693,
+        "max": 9.033980365000389
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 1,
+      "prefix_cache_workers": [
+        {
+          "worker": 0,
+          "role": "prefill",
+          "queried_tokens": 739139.0,
+          "hit_tokens": 586944.0,
+          "token_hit_fraction": 0.7940915037631623
+        },
+        {
+          "worker": 1,
+          "role": "backend",
+          "queried_tokens": 739139.0,
+          "hit_tokens": 575584.0,
+          "token_hit_fraction": 0.7787222701007523
+        }
+      ],
+      "worker_gpu_metrics": {
+        "prefill-0": {
+          "utilization_pct": {
+            "mean": 44.6985294117647,
+            "p50": 42.5,
+            "p90": 92.80000000000001,
+            "p95": 95.44999999999999,
+            "p99": 100.0,
+            "min": 0.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 39463.0
+        },
+        "decode-1": {
+          "utilization_pct": {
+            "mean": 99.92279411764706,
+            "p50": 100.0,
+            "p90": 100.0,
+            "p95": 100.0,
+            "p99": 100.0,
+            "min": 87.0,
+            "max": 100.0
+          },
+          "peak_memory_mib": 38945.0
+        }
+      }
+    },
+    {
+      "run": "experiments/20261029T170701Z/native-tp8-full/full",
+      "phase": "full",
+      "status": "valid",
+      "requests_expected": 25648,
+      "attempted": 25648,
+      "successful": 25648,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 35,
+      "untruncated": false,
+      "application_format_valid": 25620,
+      "duration_s": 3735.0720408690004,
+      "requests_per_s": 6.866801957060177,
+      "output_tokens_per_s": 331.4865112245434,
+      "output_tokens_per_s_per_gpu": 41.435813903067924,
+      "output_tokens": 1238126,
+      "latency_s": {
+        "mean": 2.9097026013072766,
+        "p50": 2.8590994354997292,
+        "p90": 3.369404714400343,
+        "p95": 3.563965043299981,
+        "p99": 4.120188528889798,
+        "min": 1.1772218200003408,
+        "max": 11.615739847999976
+      },
+      "ttft_s": {
+        "mean": 0.25655603215775175,
+        "p50": 0.23536374349987454,
+        "p90": 0.38490322850020675,
+        "p95": 0.4221179133999155,
+        "p99": 0.527977723250028,
+        "min": 0.1410066859998551,
+        "max": 1.6403894310001306
+      },
+      "estimated_tpot_s": {
+        "mean": 0.054903351786707015,
+        "p50": 0.055030972865382694,
+        "p90": 0.05913081935374615,
+        "p95": 0.06032569300971058,
+        "p99": 0.06280595764575306,
+        "min": 0.022858249761914824,
+        "max": 0.07023950892856928
+      },
+      "input_tokens": {
+        "mean": 740.677050842171,
+        "p50": 705.0,
+        "p90": 893.0,
+        "p95": 1002.0,
+        "p99": 1229.0,
+        "min": 608,
+        "max": 2136
+      },
+      "output_token_distribution": {
+        "mean": 48.2737835308796,
+        "p50": 47.0,
+        "p90": 56.0,
+        "p95": 59.0,
+        "p99": 68.0,
+        "min": 31,
+        "max": 200
+      },
+      "peak_gpu_memory_mib": 39861.0,
+      "gpu_utilization_pct": {
+        "mean": 100.0,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 25613,
+        "length": 35
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "native-tp8",
+      "series_id": "initial-tp8-prefix-cache-off",
+      "traffic_order": "original",
+      "prefix_caching": false,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.9097026013072766,
+        "p50": 2.8590994354997292,
+        "p90": 3.369404714400343,
+        "p95": 3.563965043299981,
+        "p99": 4.120188528889798,
+        "min": 1.1772218200003408,
+        "max": 11.615739847999976
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 28,
+      "prefix_cache_workers": [],
+      "worker_gpu_metrics": {}
+    },
+    {
+      "run": "experiments/20261029T170701Z/native-tp8-screen/screen",
+      "phase": "screen",
+      "status": "valid",
+      "requests_expected": 1000,
+      "attempted": 1000,
+      "successful": 1000,
+      "errors": 0,
+      "timeouts": 0,
+      "cap_hits": 0,
+      "untruncated": true,
+      "application_format_valid": 1000,
+      "duration_s": 144.6055322699999,
+      "requests_per_s": 6.915364746438969,
+      "output_tokens_per_s": 332.35934507860327,
+      "output_tokens_per_s_per_gpu": 41.54491813482541,
+      "output_tokens": 48061,
+      "latency_s": {
+        "mean": 2.880460638533999,
+        "p50": 2.850375315000065,
+        "p90": 3.325763999800074,
+        "p95": 3.56067674840001,
+        "p99": 4.093570400959916,
+        "min": 1.236787232000097,
+        "max": 8.41614584800027
+      },
+      "ttft_s": {
+        "mean": 0.2776921849069986,
+        "p50": 0.23564320799982852,
+        "p90": 0.39354838989975177,
+        "p95": 0.4642848067499924,
+        "p99": 1.0392461287200194,
+        "min": 0.1489264589999948,
+        "max": 1.6427486769998723
+      },
+      "estimated_tpot_s": {
+        "mean": 0.05411514930710451,
+        "p50": 0.05471189049519209,
+        "p90": 0.058573469855270545,
+        "p95": 0.059500777952859664,
+        "p99": 0.06120265788306072,
+        "min": 0.02234620968181389,
+        "max": 0.06334459107316301
+      },
+      "input_tokens": {
+        "mean": 739.139,
+        "p50": 704.0,
+        "p90": 889.5000000000001,
+        "p95": 1007.1999999999998,
+        "p99": 1216.03,
+        "min": 626,
+        "max": 1327
+      },
+      "output_token_distribution": {
+        "mean": 48.061,
+        "p50": 48.0,
+        "p90": 55.0,
+        "p95": 58.0,
+        "p99": 68.00999999999999,
+        "min": 34,
+        "max": 146
+      },
+      "peak_gpu_memory_mib": 39861.0,
+      "gpu_utilization_pct": {
+        "mean": 100.0,
+        "p50": 100.0,
+        "p90": 100.0,
+        "p95": 100.0,
+        "p99": 100.0,
+        "min": 100.0,
+        "max": 100.0
+      },
+      "global_concurrency": 20,
+      "finish_reasons": {
+        "stop": 1000
+      },
+      "request_hash_mismatches": 0,
+      "prompt_token_mismatches": 0,
+      "configuration": "native-tp8",
+      "series_id": "initial-tp8-prefix-cache-off",
+      "traffic_order": "original",
+      "prefix_caching": false,
+      "actual_manifest_allocated_gpus": 8,
+      "invalid_gpu_telemetry_rows": 0,
+      "all_attempt_latency_s": {
+        "mean": 2.880460638533999,
+        "p50": 2.850375315000065,
+        "p90": 3.325763999800074,
+        "p95": 3.56067674840001,
+        "p99": 4.093570400959916,
+        "min": 1.236787232000097,
+        "max": 8.41614584800027
+      },
+      "failed_attempt_latency_s": {
+        "mean": null,
+        "p50": null,
+        "p90": null,
+        "p95": null,
+        "p99": null,
+        "min": null,
+        "max": null
+      },
+      "concurrency_audit": {
+        "independent_peak": 20,
+        "ending_balance": 0,
+        "valid": true
+      },
+      "application_format_failures": 0,
+      "prefix_cache_workers": [],
+      "worker_gpu_metrics": {}
+    }
+  ],
+  "generation": {
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "max_tokens": 200,
+    "stream": true,
+    "natural_eos": true,
+    "status": "Explicit new-baseline assumptions; original historical invocation not fully established."
+  },
+  "primary_load": {
+    "type": "closed-loop-concurrency",
+    "global_concurrency": 20,
+    "fixed_request_rate": null,
+    "images_used": false,
+    "traffic_order": "original",
+    "retries": false
+  },
+  "matched_pair_comparison": {
+    "disagg_vs_native_requests_per_s_pct": -22.03107888868224,
+    "disagg_vs_native_p95_pct": 55.05719484239484,
+    "independent_full_pairs": 1,
+    "interpretation": "No disaggregation improvement in the measured pair. No repeatability, universal Dynamo, natural-completion or 50%-GPU-saving claim."
+  }
+}

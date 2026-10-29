@@ -1,0 +1,11 @@
+Completed the Qwen2.5-72B text study using all 25,648 supplied prompts at concurrency 20, with eight A100 40GB GPUs per configuration:
+
+• Native vLLM, two TP4 replicas: 9.59 requests/s; 2.56 s p95 full-response latency.
+• Dynamo disaggregated, TP4 prefill + TP4 decode: 7.48 requests/s; 3.97 s p95 — 22% lower throughput in this matched pair.
+• A separate 1,000-request KV-aware routing screen was essentially tied with native. Both had about 79% prefix-token cache hits.
+
+This agrees directionally with the first deck, but adapts its 80GB/larger-GPU setup. Both full runs had 35–38 capped outputs; no untruncated-result or GPU-saving claim.
+
+For the second deck, could Nikhil share the original deployment/benchmark scripts and input/traffic setup for Qwen2.5-VL-72B-Instruct-AWQ, including load, generation settings, replica/TP allocation and how “skew” was constructed? We have not reproduced those conditions yet.
+
+Results: https://github.com/scheckerNV/adobe-gemma/tree/main/qwen72b-a100-20261029
